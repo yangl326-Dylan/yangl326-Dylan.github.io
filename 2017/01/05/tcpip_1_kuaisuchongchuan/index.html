@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Be honest with yourself and then the world.">
+    <meta name="keyword"  content="Dylan">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        TCP Retransmit,TCP重传 - Dylan326 的博客 | Dylan326&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1c71474bf99cabdd014cb2284d21e83e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Be honest with yourself and then the world. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Dylan326</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#TCP%E9%87%8D%E4%BC%A0"><span class="toc-text">TCP重传</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%87%8D%E4%BC%A0"><span class="toc-text">为什么要重传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E6%97%B6%E9%87%8D%E4%BC%A0"><span class="toc-text">超时重传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E9%87%8D%E4%BC%A0"><span class="toc-text">快速重传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%97%AE%E9%A2%98"><span class="toc-text">思考问题</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Be honest with yourself and then the world. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        TCP Retransmit,TCP重传
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2017-01-05 19:45</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#网络" title="网络">网络</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#TCP/IP" title="TCP/IP">TCP/IP</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#TCP重传" title="TCP重传">TCP重传</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="TCP重传"><a href="#TCP重传" class="headerlink" title="TCP重传"></a>TCP重传</h1><h3 id="为什么要重传"><a href="#为什么要重传" class="headerlink" title="为什么要重传"></a>为什么要重传</h3><p>TCP需要保证数据包的可靠性送达，必须有重传机制  </p>
+<span id="more"></span>
+<p>tcp数据传输中syncnum和ack机制的单位是发送的字节数，那么如果1，2，3，4，5份数据发送过去，3出现丢失，收到4，5 那么数据该如何回复确认，ack机制只能确保确认最大的收到字节数，对于存在跳跃数据没法确认。</p>
+<h3 id="超时重传"><a href="#超时重传" class="headerlink" title="超时重传"></a>超时重传</h3><p>tcp有多重定时器，其中重传定时器，处理超时重传,数据3投递存在丢失，等待ack超时后可以重传3数据。  </p>
+<h3 id="快速重传"><a href="#快速重传" class="headerlink" title="快速重传"></a>快速重传</h3><p>鉴于超时重传取决于超时时间，快速重传的，快速相对于超时重传机制，实际可以理解为主动重传。例子同上，3接收丢失，收到4，5 仍旧回复2数据的ack， 那么发送方知道3丢失，重复传送3数据，此时接收方已收到4，5数据，收到3数据后回复5数据ack</p>
+<h3 id="思考问题"><a href="#思考问题" class="headerlink" title="思考问题"></a>思考问题</h3><p>超时重传，tcp如何确认超时时间<br>快速重传，如果去优化连续数据中的若干部分段传输丢失，有何利弊。</p>
+<hr>
+<p><strong>版权声明：本文为博主原创文章，未经允许不得转载。</strong></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/youngchou326">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/yangl326-Dylan">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/敦飏-周-49a752b7">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://github.com/yangl326-Dylan">Github</a></span>
+        <span>/</span>
+        
+        <span><a href="http://www.dylan326.com/2013/02/13/about/">About</a></span>
+        <span>/</span>
+        
+        <span><a href="mailto:zhoudunyang@gmail.com">Mail</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

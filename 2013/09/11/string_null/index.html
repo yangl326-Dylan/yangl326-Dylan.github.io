@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Be honest with yourself and then the world.">
+    <meta name="keyword"  content="Dylan">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        String.valueOf()能否传入null - Dylan326 的博客 | Dylan326&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1c71474bf99cabdd014cb2284d21e83e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Be honest with yourself and then the world. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Dylan326</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Be honest with yourself and then the world. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        String.valueOf()能否传入null
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2013-09-11 11:23</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#java" title="java">java</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>最近发现一个有意思的问题，可以看看这两个的输出结果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String.valueOf(map.get(&quot;key&quot;)) //①</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String.valueOf(null)          //②</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>会发现map中①返回正常 ”null“字符串，而②抛出NLP异常</p>
+<p>跳转到String类的valueOf发现使用的是这个重载的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(<span class="type">char</span> data[])</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">String</span>(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>再看看char[] string的构造方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">String</span><span class="params">(<span class="type">char</span> value[])</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.value = Arrays.copyOf(value, value.length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>null无length属性，到这里就会异常。</p>
+<p>传入（Object）null时候（或者无key得时候map对象返回空对象），实现的是如下重载的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">valueOf</span><span class="params">(Object obj)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (obj == <span class="literal">null</span>) ? <span class="string">&quot;null&quot;</span> : obj.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>即正常返回 null字符串。</p>
+<p>实际上null是关键字，不属于Object对象，至于选择器为什么会优先选择重载函数就得分析null和Object obj&#x3D;null 中 null和obj的区别了。</p>
+<hr>
+<p><strong>版权声明：本文为博主原创文章，未经允许不得转载。</strong></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/youngchou326">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/yangl326-Dylan">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/敦飏-周-49a752b7">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://github.com/yangl326-Dylan">Github</a></span>
+        <span>/</span>
+        
+        <span><a href="http://www.dylan326.com/2013/02/13/about/">About</a></span>
+        <span>/</span>
+        
+        <span><a href="mailto:zhoudunyang@gmail.com">Mail</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

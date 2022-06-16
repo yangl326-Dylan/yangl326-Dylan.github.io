@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Be honest with yourself and then the world.">
+    <meta name="keyword"  content="Dylan">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        gperftools做堆外内存分析（案例JVM Inflater 内存泄漏分析） - Dylan326 的博客 | Dylan326&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1c71474bf99cabdd014cb2284d21e83e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Be honest with yourself and then the world. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Dylan326</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#google-perftools"><span class="toc-text">google-perftools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM%E5%A0%86%E5%A4%96%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90"><span class="toc-text">JVM堆外内存分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM-%E8%BF%9B%E7%A8%8B%E4%BD%BF%E7%94%A8perftools-%E5%81%9A%E5%88%86%E6%9E%90"><span class="toc-text">JVM 进程使用perftools 做分析</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Be honest with yourself and then the world. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        gperftools做堆外内存分析（案例JVM Inflater 内存泄漏分析）
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2017-09-28 13:31</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#java" title="java">java</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#memory" title="memory">memory</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h2 id="google-perftools"><a href="#google-perftools" class="headerlink" title="google-perftools"></a>google-perftools</h2><p>perftools wiki地址 ：<a target="_blank" rel="noopener" href="https://github.com/gperftools/gperftools/wiki">https://github.com/gperftools/gperftools/wiki</a><br>安装perftools<br>…<br>工具主要作用分析程序：heap、cpu等，常用于c&#x2F;c++程序分析<br>使用文档如下：<br><a target="_blank" rel="noopener" href="https://gperftools.github.io/gperftools/heapprofile.html">https://gperftools.github.io/gperftools/heapprofile.html</a><br><a target="_blank" rel="noopener" href="https://gperftools.github.io/gperftools/heap_checker.html">https://gperftools.github.io/gperftools/heap_checker.html</a><br><a target="_blank" rel="noopener" href="https://gperftools.github.io/gperftools/cpuprofile.html">https://gperftools.github.io/gperftools/cpuprofile.html</a></p>
+<span id="more"></span>
+<h2 id="JVM堆外内存分析"><a href="#JVM堆外内存分析" class="headerlink" title="JVM堆外内存分析"></a>JVM堆外内存分析</h2><p>本文针对于 Oracle Hotspot jvm 虚拟机<br>JVM 进程占用大小一般约等于： heap + perm + thread stack + nio directbuffer<br>当然还有其他占用，一般情况来看native memory跟踪可以使用NMT参数 -XX:NativeMemoryTracking<br>详情wiki ： <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/nmt-8.html">https://docs.oracle.com/javase/8/docs/technotes/guides/vm/nmt-8.html</a><br>JVM常见内存泄漏检查方式可以按照 oracle提供的文档： <a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/javase/memleaks-137499.html">http://www.oracle.com/technetwork/java/javase/memleaks-137499.html</a><br>其中dbx是和perftools类似工具。</p>
+<p>除此之外<br>进程内存在用在linux 面下top,pmap 等工具是较好确定进程内存的手段， 在&#x2F;proc&#x2F;${pid}&#x2F; 目录下smaps文件等查看RSS，虚拟内存，swap占用等。<br>pmap 找到内存申请的地址块， 可以使用gdb attach 后 dump 某一段的内存地址 ，后查看内存的数据。 注意gdb attach 进程会暂停， 线上谨慎操作。</p>
+<p>如果发现进程内存过高，可能需要注意下程序是否存在堆外内存泄漏问题，java进程出现的堆外内存泄漏常见有如下几个方面：</p>
+<ul>
+<li>JNI</li>
+<li>NIO directbuffer 泄漏</li>
+<li>gzip  （本文案例就是此类）</li>
+</ul>
+<p>网络编程中程序中，nio directbuffer 有监控工具可以查看， directbuffer使用量、并且可以设置最大直接内存buffer。</p>
+<h2 id="JVM-进程使用perftools-做分析"><a href="#JVM-进程使用perftools-做分析" class="headerlink" title="JVM 进程使用perftools 做分析"></a>JVM 进程使用perftools 做分析</h2><p>案例中发现的问题jetty 服务在某版本的JDK（jdk7u80~jdk8u045等 应该7u80后的版本在本文章编写时候都有）出现的内存泄漏问题分析和查找</p>
+<p>1、安装perftools 注意配置安装目录， 找到对应的文件路径<br>2、启动java程序时候携带环境变量（可以参照 perftools wiki帮助 写的较为明确， 文档主要针对正对c&#x2F;c++程序， Hotspot主要是c++写的）<br>export LD_PRELOAD&#x3D;&#x2F;opt&#x2F;perftools&#x2F;lib&#x2F;libtcmalloc.so  # 安装后的库文件路径<br>export HEAPPROFILE&#x3D;&#x2F;opt&#x2F;mybin.hprof  #heap分析文件路径和文件<br>特别注意目录和文件权限是否是进程用户可使用的<br>3、运行后启动程序后<br>4、pprof执行程序（注意路径），分析这些heap文件 pprof –help查看使用方式<br>.&#x2F;perftools&#x2F;bin&#x2F;pprof –text *.heap   以文本结果展示heap的分析文件， 结果说明见perftools wiki文档</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Total: 55838.9 MB</span><br><span class="line"> 41320.8  74.0%  74.0%  41320.8  74.0% updatewindow</span><br><span class="line">  9018.8  16.2%  90.2%   9018.8  16.2% inflateInit2_</span><br><span class="line">  1559.4   2.8%  92.9%   1559.4   2.8% os::malloc@907260</span><br><span class="line">  1556.4   2.8%  95.7%   1556.4   2.8% init</span><br><span class="line">   587.5   1.1%  96.8%    587.5   1.1% 00007fb480508a66</span><br><span class="line">   551.4   1.0%  97.8%    551.4   1.0% 00007f2b1d6f4a66</span><br><span class="line">   451.5   0.8%  98.6%    451.5   0.8% 00007fb48177e8e9</span><br><span class="line">   183.1   0.3%  98.9%    183.1   0.3% 00007fb46c1b6c91</span><br><span class="line">   128.2   0.2%  99.1%    128.2   0.2% 00007fb480508245</span><br><span class="line">   120.4   0.2%  99.4%    120.4   0.2% 00007f2b1d6f4245</span><br><span class="line">   111.0   0.2%  99.6%   9129.7  16.4% Java_java_util_zip_Inflater_init</span><br><span class="line">   102.8   0.2%  99.7%    102.8   0.2% 00007f2b1e96a8e9</span><br><span class="line">    74.2   0.1%  99.9%     74.2   0.1% readCEN</span><br><span class="line">    45.8   0.1% 100.0%     45.8   0.1% 00007f2b09392c91</span><br><span class="line">     7.5   0.0% 100.0%      7.5   0.0% 00007fb4805025b6</span><br><span class="line">     4.5   0.0% 100.0%      4.5   0.0% 00007fb48192162d</span><br><span class="line">		 ......</span><br></pre></td></tr></table></figure>
+
+<p>对于上述问题表现的jdk1.7.0_76不会出现<br>jdk1.7.0_80,jdk1.8.0_45以上明显出现。<br>用过pmap分析过 主要都是64m内存块较多， 查看过数据都是jar load相关的数据当时没引起注意<br>分析主要在updatewindow，Java_java_util_zip_Inflater_init ， 这个是gzip相关， 于是搜索相关资料<br>结论如下：<br>‘’’Note that the URLClassLoader was properly disposed of, with a call to close() first, and that the ServiceLoader’s reload() method was also called to flush it’s internal cache.<br>This is NOT specific to the ServletContainerInitializer, it happens with any class that is loaded via the ServiceLoader.<br>File handles remain to the *.jar until the app’s process is stopped.’’’</p>
+<p>网上查找相关资料<br>jdk 问题  <a target="_blank" rel="noopener" href="http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8156014">http://bugs.java.com/bugdatabase/view_bug.do?bug_id=8156014</a><br>jetty issue <a target="_blank" rel="noopener" href="https://github.com/eclipse/jetty.project/issues/231">https://github.com/eclipse/jetty.project/issues/231</a></p>
+<p>处理方法,以下其一</p>
+<ul>
+<li>JDK降级到jdk7u76， 使用不会出现问题的JDK版本</li>
+<li>等新版本jdk bug修复</li>
+<li>jetty contributer 给出的方案 disable url caching  wiki <a target="_blank" rel="noopener" href="https://github.com/eclipse/jetty.project/issues/575">https://github.com/eclipse/jetty.project/issues/575</a></li>
+</ul>
+<hr>
+<p><strong>版权声明：本文为博主原创文章，未经允许不得转载。</strong></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/youngchou326">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/yangl326-Dylan">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://www.linkedin.com/in/敦飏-周-49a752b7">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-linkedin"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://github.com/yangl326-Dylan">Github</a></span>
+        <span>/</span>
+        
+        <span><a href="http://www.dylan326.com/2013/02/13/about/">About</a></span>
+        <span>/</span>
+        
+        <span><a href="mailto:zhoudunyang@gmail.com">Mail</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
