@@ -713,33 +713,6 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2019/11/12/A_leecode_swappaires_/</loc>
-    
-    <lastmod>2019-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2019/06/26/A_leecode_combination_sum/</loc>
-    
-    <lastmod>2019-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/01/29/A_leecode_longest_palindrome_substr/</loc>
-    
-    <lastmod>2019-11-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.mai168.cn/2019/11/11/20191111/</loc>
     
     <lastmod>2019-11-11</lastmod>
@@ -761,15 +734,6 @@
     <loc>http://blog.mai168.cn/2019/10/15/20191015/</loc>
     
     <lastmod>2019-11-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2019/09/18/A07_zifuchuanpipei/</loc>
-    
-    <lastmod>2019-10-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -957,150 +921,6 @@
   
   <url>
     <loc>http://blog.mai168.cn/2019/08/28/20190828/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2017/07/17/A00_daolun/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2017/07/21/A01_diguishizi/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2017/07/22/A01_quanpaileidigui/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2017/07/22/A01_taijie_n/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2017/08/06/A02_duipaixu/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2017/08/12/A02_kuaisupaixu/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2017/09/22/A03_shujujiegou/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/03/22/A_leecode_median_two_sorted_arrays/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/01/14/A_leecode_most_container/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/11/26/A_leecode_nest_permutation/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/10/10/A_leecode_phone_num_combine/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/10/30/A_leecode_remove_element/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/09/03/A_leecode_reverseInt/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/12/24/A_leecode_rotaed_sorted_array/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2017/09/22/A_leecode_sum2/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2019/01/28/A_leecode_sum3orN/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1370,15 +1190,6 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2019/01/09/A_leecode_merge_k_sorted_array/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.mai168.cn/2019/09/30/20190930/</loc>
     
     <lastmod>2019-09-30</lastmod>
@@ -1452,42 +1263,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/tags/Algorithms/</loc>
-    <lastmod>2025-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/tags/%E9%80%92%E5%BD%92%E5%BC%8F%E5%AD%90/</loc>
-    <lastmod>2025-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.mai168.cn/tags/%E9%80%92%E5%BD%92/</loc>
-    <lastmod>2025-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/tags/%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2025-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2025-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/tags/leecode/</loc>
     <lastmod>2025-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
