@@ -2,6 +2,15 @@
   "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "deploy": "node scripts/deploy.js",
+    "build:next": "cd learn_opencode/web && npm install && npm run build",
+    "build:hexo": "npx hexo clean && npx hexo generate",
+    "clean": "npx hexo clean && rm -rf source/learn_opencode",
+    "server": "npx hexo server",
+    "hexo-version": "hexo version"
+  },
   "hexo": {
     "version": "8.1.2"
   },
