@@ -6,3 +6,9 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+
+# Learn OpenCode generated files
+source/learn_opencode/
+learn_opencode/web/out/
+learn_opencode/web/.next/
+learn_opencode/web/node_modules/
