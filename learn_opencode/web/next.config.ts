@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   trailingSlash: true,
+  basePath: "/learn_opencode",
 };
 
 export default nextConfig;
