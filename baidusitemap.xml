@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.mai168.cn/2020/07/09/target/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2020/06/19/stability/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2013/02/13/about/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2023/07/21/20230721/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2023/05/23/20230523/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2022/10/16/20221016/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2022/09/24/20220924/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2021/01/08/20210108/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2021/02/25/20210225/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2020/04/09/20200409/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2017/08/08/20170808/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2017/08/24/20170824/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2017/07/17/20170717/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2017/07/06/20170706/</loc>
+    <lastmod>2026-08-01</lastmod>
+  </url>
+  <url>
     <loc>http://blog.mai168.cn/2026/03/21/20260321/</loc>
     <lastmod>2026-03-28</lastmod>
   </url>
@@ -89,10 +145,6 @@
     <lastmod>2023-08-28</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2023/07/21/20230721/</loc>
-    <lastmod>2023-07-21</lastmod>
-  </url>
-  <url>
     <loc>http://blog.mai168.cn/2023/07/05/20230705/</loc>
     <lastmod>2023-07-05</lastmod>
   </url>
@@ -105,10 +157,6 @@
     <lastmod>2023-06-21</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2023/05/23/20230523/</loc>
-    <lastmod>2023-05-23</lastmod>
-  </url>
-  <url>
     <loc>http://blog.mai168.cn/2023/05/21/20230519/</loc>
     <lastmod>2023-05-21</lastmod>
   </url>
@@ -119,10 +167,6 @@
   <url>
     <loc>http://blog.mai168.cn/2023/05/14/20230514/</loc>
     <lastmod>2023-05-18</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2013/02/13/about/</loc>
-    <lastmod>2023-04-09</lastmod>
   </url>
   <url>
     <loc>http://blog.mai168.cn/2023/04/08/20230408/</loc>
@@ -147,14 +191,6 @@
   <url>
     <loc>http://blog.mai168.cn/2022/10/29/20221029/</loc>
     <lastmod>2022-10-29</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2022/10/16/20221016/</loc>
-    <lastmod>2022-10-17</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2022/09/24/20220924/</loc>
-    <lastmod>2022-10-12</lastmod>
   </url>
   <url>
     <loc>http://blog.mai168.cn/2022/10/12/20221012/</loc>
@@ -245,20 +281,12 @@
     <lastmod>2021-02-25</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2021/02/25/20210225/</loc>
-    <lastmod>2021-02-25</lastmod>
-  </url>
-  <url>
     <loc>http://blog.mai168.cn/2021/01/15/20210115/</loc>
     <lastmod>2021-01-15</lastmod>
   </url>
   <url>
     <loc>http://blog.mai168.cn/2021/01/12/20210112/</loc>
     <lastmod>2021-01-13</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2021/01/08/20210108/</loc>
-    <lastmod>2021-01-08</lastmod>
   </url>
   <url>
     <loc>http://blog.mai168.cn/2020/11/26/20201126/</loc>
@@ -289,14 +317,6 @@
     <lastmod>2020-08-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2020/07/09/target/</loc>
-    <lastmod>2020-07-09</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2020/06/19/stability/</loc>
-    <lastmod>2020-06-19</lastmod>
-  </url>
-  <url>
     <loc>http://blog.mai168.cn/2020/06/17/20200617/</loc>
     <lastmod>2020-06-17</lastmod>
   </url>
@@ -307,10 +327,6 @@
   <url>
     <loc>http://blog.mai168.cn/2020/04/21/20200421/</loc>
     <lastmod>2020-04-21</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2020/04/09/20200409/</loc>
-    <lastmod>2020-04-09</lastmod>
   </url>
   <url>
     <loc>http://blog.mai168.cn/2020/03/02/20200302/</loc>
@@ -369,22 +385,6 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2017/07/06/20170706/</loc>
-    <lastmod>2019-10-18</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2017/07/17/20170717/</loc>
-    <lastmod>2019-10-18</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2017/08/08/20170808/</loc>
-    <lastmod>2019-10-18</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2017/08/24/20170824/</loc>
-    <lastmod>2019-10-18</lastmod>
-  </url>
-  <url>
     <loc>http://blog.mai168.cn/2017/09/19/20170919/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
@@ -417,11 +417,11 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2018/11/13/20181026/</loc>
+    <loc>http://blog.mai168.cn/2018/11/28/20181128/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2018/11/28/20181128/</loc>
+    <loc>http://blog.mai168.cn/2018/11/13/20181026/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -493,11 +493,11 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2017/06/23/quanpailie_digui/</loc>
+    <loc>http://blog.mai168.cn/2017/07/06/quanpailie_permutation/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2017/07/06/quanpailie_permutation/</loc>
+    <loc>http://blog.mai168.cn/2017/06/23/quanpailie_digui/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -525,11 +525,11 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2016/06/30/tcpip_1/</loc>
+    <loc>http://blog.mai168.cn/2017/01/05/tcpip_1_kuaisuchongchuan/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2017/01/05/tcpip_1_kuaisuchongchuan/</loc>
+    <loc>http://blog.mai168.cn/2016/06/30/tcpip_1/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -537,11 +537,11 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2016/08/03/xinqin20160803/</loc>
+    <loc>http://blog.mai168.cn/2016/10/11/xinqin20161011/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2016/10/11/xinqin20161011/</loc>
+    <loc>http://blog.mai168.cn/2016/08/03/xinqin20160803/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -549,11 +549,11 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2017/03/03/xinqin20170303/</loc>
+    <loc>http://blog.mai168.cn/2017/06/23/%E7%BA%AA%E5%BF%B5%E6%97%A52017/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2017/06/23/%E7%BA%AA%E5%BF%B5%E6%97%A52017/</loc>
+    <loc>http://blog.mai168.cn/2017/03/03/xinqin20170303/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
