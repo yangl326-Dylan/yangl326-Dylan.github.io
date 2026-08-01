@@ -1,0 +1,103 @@
+# ===========================================================
+# NexT theme configuration for Dylan326's blog
+# ===========================================================
+
+# Scheme: Muse | Mist | Pisces | Gemini
+scheme: Gemini
+
+# Dark mode
+darkmode: true
+
+# Menu
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+  sitemap: /sitemap.xml || fa fa-sitemap
+
+menu_settings:
+  icons: true
+  badges: false
+
+# Sidebar
+sidebar:
+  position: left
+  width_expanded: 320
+  width_dual_column: 240
+  display: post
+  padding: 18
+  offset: 12
+
+# Avatar
+avatar:
+  url: /img/avatar.jpg
+  rounded: true
+  rotated: false
+
+site_state: true
+
+# Social links
+social:
+  GitHub: https://github.com/yangl326-Dylan || fab fa-github
+  E-Mail: mailto:zhoudunyang@gmail.com || fa fa-envelope
+  Weibo: https://weibo.com/youngchou326 || fab fa-weibo
+  LinkedIn: https://www.linkedin.com/in/%E6%95%A6%E9%A3%8F-%E5%91%A8-49a752b7 || fab fa-linkedin
+
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+# Footer
+footer:
+  since: 2013
+  icon:
+    name: fa fa-heart
+    animated: false
+    color: "#ff0000"
+  powered: true
+
+# Post settings
+excerpt_description: true
+read_more_btn: true
+
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at: false
+  categories: true
+
+# Table of Contents in the sidebar
+toc:
+  enable: true
+  number: false
+  expand_all: true
+  max_depth: 6
+
+# Back to top
+back2top:
+  enable: true
+  sidebar: false
+  scrollpercent: true
+
+# Local search (uses hexo-generator-search -> search.xml)
+local_search:
+  enable: true
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# Comments - Utterances (GitHub Issues based, no secret keys required)
+comments:
+  style: tabs
+  active: utterances
+  storage: true
+  lazyload: false
+
+utterances:
+  enable: true
+  repo: yangl326-Dylan/yangl326-Dylan.github.io
+  issue_term: pathname
+  theme: github-light
