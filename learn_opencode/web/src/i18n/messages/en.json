@@ -1,0 +1,71 @@
+{
+  "meta": { "title": "Learn OpenCode", "description": "Understand OpenCode AI coding agent design and implementation from scratch" },
+  "nav": { "home": "Home", "timeline": "Timeline", "github": "GitHub" },
+  "home": {
+    "hero_title": "Learn OpenCode",
+    "hero_subtitle": "Understand AI coding agent design from scratch, one mechanism at a time",
+    "start": "Start Learning",
+    "core_pattern": "The Core Pattern",
+    "core_pattern_desc": "Every AI coding agent shares the same loop: call the model, execute tools, feed results back. Production systems add policy, permissions, and lifecycle layers on top.",
+    "learning_path": "Learning Path",
+    "learning_path_desc": "10 progressive sessions, from a simple loop to a complete agent system",
+    "layers_title": "Architectural Layers",
+    "layers_desc": "Five orthogonal concerns that compose into a complete agent",
+    "architecture_title": "System Architecture",
+    "architecture_desc": "Five layers compose into a complete AI coding agent. Each layer builds on the one below it.",
+    "loc": "LOC",
+    "versions_in_layer": "versions"
+  },
+  "version": {
+    "loc": "lines of code",
+    "tools": "tools",
+    "new": "New",
+    "prev": "Previous",
+    "next": "Next",
+    "design_decisions": "Design Decisions",
+    "key_insight": "Key Insight",
+    "tab_learn": "Learn",
+    "tab_code": "Code",
+    "tab_design": "Design"
+  },
+  "timeline": {
+    "title": "Learning Path",
+    "subtitle": "s01 to s10: Progressive Agent Design",
+    "layer_legend": "Layer Legend",
+    "loc_growth": "LOC Growth"
+  },
+  "layers": {
+    "tools": "What the agent CAN do. Tools give the model capabilities to interact with the world.",
+    "planning": "How work is organized. From category routing to subagent dispatch.",
+    "extensibility": "Extend agent capabilities through the plugin system.",
+    "concurrency": "Non-blocking execution. Background threads for parallel work.",
+    "platform": "Platform layer for configuration and session management."
+  },
+  "sessions": {
+    "s01": "Agent Loop", "s02": "Tool Dispatch", "s03": "Permission Gate", "s04": "Hook System",
+    "s05": "Task Categories", "s06": "Subagent", "s07": "Skill Loading", "s08": "Plugin SDK",
+    "s09": "Background Tasks", "s10": "Config & Session"
+  },
+  "session_details": {
+    "s01_title": "The Agent Loop",
+    "s01_desc": "The core while-loop pattern: call model → execute tools → feed results back. This is the foundational architecture of every AI coding agent.",
+    "s02_title": "Tool Dispatch",
+    "s02_desc": "Tool registration and execution via a dispatch table. Adding a new tool is one line in the dispatch map.",
+    "s03_title": "Permission Gate",
+    "s03_desc": "Permission check gate before dangerous operations. Protects the user environment while maintaining automation.",
+    "s04_title": "Hook System",
+    "s04_desc": "Lifecycle hook system allowing plugins to inject behavior at different stages without modifying core loop code.",
+    "s05_title": "Task Categories",
+    "s05_desc": "8 task categories (quick, deep, visual-engineering, etc.) each with different execution strategies and model configs.",
+    "s06_title": "Subagent",
+    "s06_desc": "10 named subagents (oracle, explore, librarian, etc.) each with domain expertise, dispatched via @mention.",
+    "s07_title": "Skill Loading",
+    "s07_desc": "SKILL.md file system with priority-based loading. Project skills > personal skills > built-in skills.",
+    "s08_title": "Plugin SDK",
+    "s08_desc": "@opencode-ai/plugin package with complete Hooks API covering config, tool, permission, chat lifecycles.",
+    "s09_title": "Background Tasks",
+    "s09_desc": "Background task execution allowing the agent to keep reasoning while slow operations complete elsewhere.",
+    "s10_title": "Config & Session",
+    "s10_desc": "opencode.jsonc global configuration and session management. One config file controls the entire agent harness."
+  }
+}

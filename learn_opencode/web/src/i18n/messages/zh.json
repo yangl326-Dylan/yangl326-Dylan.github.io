@@ -1,0 +1,71 @@
+{
+  "meta": { "title": "Learn OpenCode", "description": "从零理解 OpenCode AI 编码 agent 的设计与实现" },
+  "nav": { "home": "首页", "timeline": "学习路径", "github": "GitHub" },
+  "home": {
+    "hero_title": "Learn OpenCode",
+    "hero_subtitle": "从零理解 AI 编码 agent 的设计与实现，一个机制一节课",
+    "start": "开始学习",
+    "core_pattern": "核心模式",
+    "core_pattern_desc": "每个 AI 编码 agent 共享同一个循环：调用模型、执行工具、回传结果。生产系统在此基础上添加策略、权限和生命周期层。",
+    "learning_path": "学习路径",
+    "learning_path_desc": "10 节渐进式课程，从简单的循环到完整的 agent 系统",
+    "layers_title": "架构分层",
+    "layers_desc": "五个正交的关注点，组合成完整的 agent",
+    "architecture_title": "系统架构",
+    "architecture_desc": "五层架构组合成完整的 AI 编码 agent，每层构建在下一层之上",
+    "loc": "行",
+    "versions_in_layer": "个版本"
+  },
+  "version": {
+    "loc": "行代码",
+    "tools": "工具",
+    "new": "新增",
+    "prev": "上一节",
+    "next": "下一节",
+    "design_decisions": "设计决策",
+    "key_insight": "核心洞察",
+    "tab_learn": "学习",
+    "tab_code": "代码",
+    "tab_design": "设计"
+  },
+  "timeline": {
+    "title": "学习路径",
+    "subtitle": "s01 到 s10：渐进式 Agent 设计",
+    "layer_legend": "分层图例",
+    "loc_growth": "代码量增长"
+  },
+  "layers": {
+    "tools": "agent 能做什么。基础：工具赋予模型与世界交互的能力。",
+    "planning": "工作如何组织。从分类路由到子代理调度。",
+    "extensibility": "通过插件系统扩展 agent 能力。",
+    "concurrency": "非阻塞执行。后台线程实现并行工作。",
+    "platform": "配置与会话管理的平台层。"
+  },
+  "sessions": {
+    "s01": "Agent Loop", "s02": "Tool Dispatch", "s03": "Permission Gate", "s04": "Hook System",
+    "s05": "Task Categories", "s06": "Subagent", "s07": "Skill Loading", "s08": "Plugin SDK",
+    "s09": "Background Tasks", "s10": "Config & Session"
+  },
+  "session_details": {
+    "s01_title": "The Agent Loop",
+    "s01_desc": "最核心的 while 循环模式：调用模型 → 执行工具 → 回传结果。这是所有 AI 编码 agent 的基础架构。",
+    "s02_title": "Tool Dispatch",
+    "s02_desc": "通过工具调度表实现工具注册与执行。新增一个工具只需要在 dispatch map 中加一行。",
+    "s03_title": "Permission Gate",
+    "s03_desc": "在危险操作执行前添加权限检查关卡。保护用户环境的同时保持 agent 的自动化能力。",
+    "s04_title": "Hook System",
+    "s04_desc": "生命周期钩子系统，允许插件在 agent 运行的不同阶段注入行为，而不修改核心循环代码。",
+    "s05_title": "Task Categories",
+    "s05_desc": "8 种任务分类（quick、deep、visual-engineering 等），每种对应不同的执行策略和模型配置。",
+    "s06_title": "Subagent",
+    "s06_desc": "10 个命名子代理（oracle、explore、librarian 等），每个有专长领域，通过 @mention 调度。",
+    "s07_title": "Skill Loading",
+    "s07_desc": "SKILL.md 文件系统，按优先级加载技能。项目技能 > 个人技能 > 内置技能。",
+    "s08_title": "Plugin SDK",
+    "s08_desc": "@opencode-ai/plugin 包提供完整的 Hooks API，覆盖 config、tool、permission、chat 等生命周期。",
+    "s09_title": "Background Tasks",
+    "s09_desc": "后台任务执行机制，允许 agent 在等待慢操作完成的同时继续推理。",
+    "s10_title": "Config & Session",
+    "s10_desc": "opencode.jsonc 全局配置与会话管理系统。一个配置文件控制整个 agent harness 的行为。"
+  }
+}
