@@ -37,6 +37,7 @@ skip_render:
   - learn_opencode/**/*.html
 include:
   - learn_opencode/_next/**    # Next.js assets are excluded by default (_ prefix)
+  - learn_opencode/**/__next*  # Next.js RSC flight data files
 
 # Writing
 new_post_name: :title.md # File name of new posts

@@ -15,7 +15,7 @@ function ArchitectureSection({ t, locale }: { t: (key: string) => string; locale
         <p className="mt-2 text-[var(--color-text-secondary)]">{t("architecture_desc")}</p>
       </div>
       <div className="rounded-xl border border-[var(--color-border)] bg-white p-2 dark:bg-zinc-950">
-        <img src="/agent-loop.svg" alt={locale === "zh" ? "OpenCode 系统架构" : "OpenCode System Architecture"} className="w-full" />
+        <img src="/learn_opencode/agent-loop.svg" alt={locale === "zh" ? "OpenCode 系统架构" : "OpenCode System Architecture"} className="w-full" />
       </div>
     </section>
   );
@@ -100,7 +100,7 @@ export default function HomePage() {
           <p className="mt-2 text-[var(--color-text-secondary)]">{t("core_pattern_desc")}</p>
         </div>
         <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-4">
-          <img src="/agent-loop.svg" alt="Agent Loop Diagram" className="w-full max-w-4xl mx-auto" />
+          <img src="/learn_opencode/agent-loop.svg" alt="Agent Loop Diagram" className="w-full max-w-4xl mx-auto" />
         </div>
       </section>
 
