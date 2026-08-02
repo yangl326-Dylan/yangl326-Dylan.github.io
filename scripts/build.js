@@ -46,4 +46,8 @@ execSync('npm install', { stdio: 'inherit' });
 execSync('npx hexo clean', { stdio: 'inherit' });
 execSync('npx hexo generate', { stdio: 'inherit' });
 
+// 6. Add .nojekyll to prevent GitHub Pages Jekyll from ignoring _next/ directories
+console.log('\n📄 Adding .nojekyll for GitHub Pages...');
+fs.writeFileSync(path.join(__dirname, '../public/.nojekyll'), '');
+
 console.log('\n✅ Build completed successfully!');
