@@ -429,7 +429,7 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2019/07/10/20190710/</loc>
+    <loc>http://blog.mai168.cn/2019/05/07/20190507/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -437,11 +437,11 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2019/08/28/20190828/</loc>
+    <loc>http://blog.mai168.cn/2019/07/10/20190710/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2019/05/07/20190507/</loc>
+    <loc>http://blog.mai168.cn/2019/08/28/20190828/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -461,19 +461,19 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2013/08/20/classloader/</loc>
-    <lastmod>2019-10-18</lastmod>
-  </url>
-  <url>
     <loc>http://blog.mai168.cn/2013/08/21/final-java/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2017/09/28/gperftools/</loc>
+    <loc>http://blog.mai168.cn/2013/08/20/classloader/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
     <loc>http://blog.mai168.cn/2019/08/06/id_desgin/</loc>
+    <lastmod>2019-10-18</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2017/09/28/gperftools/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -493,7 +493,7 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2017/06/23/quanpailie_digui/</loc>
+    <loc>http://blog.mai168.cn/2016/04/11/quorum_consensus_algorithm/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -501,7 +501,7 @@
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
-    <loc>http://blog.mai168.cn/2016/04/11/quorum_consensus_algorithm/</loc>
+    <loc>http://blog.mai168.cn/2016/04/12/raft/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -514,6 +514,10 @@
   </url>
   <url>
     <loc>http://blog.mai168.cn/2018/01/15/spark_01_install/</loc>
+    <lastmod>2019-10-18</lastmod>
+  </url>
+  <url>
+    <loc>http://blog.mai168.cn/2017/06/23/quanpailie_digui/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
@@ -550,10 +554,6 @@
   </url>
   <url>
     <loc>http://blog.mai168.cn/2017/06/23/%E7%BA%AA%E5%BF%B5%E6%97%A52017/</loc>
-    <lastmod>2019-10-18</lastmod>
-  </url>
-  <url>
-    <loc>http://blog.mai168.cn/2016/04/12/raft/</loc>
     <lastmod>2019-10-18</lastmod>
   </url>
   <url>
