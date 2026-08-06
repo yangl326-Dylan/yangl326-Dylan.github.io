@@ -938,7 +938,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2018/04/04/20180327/</loc>
+    <loc>http://blog.mai168.cn/2018/05/09/20180509/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -947,7 +947,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2018/05/09/20180509/</loc>
+    <loc>http://blog.mai168.cn/2018/04/04/20180327/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1145,7 +1145,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2017/06/23/quanpailie_digui/</loc>
+    <loc>http://blog.mai168.cn/2017/07/06/quanpailie_permutation/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1154,7 +1154,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2017/07/06/quanpailie_permutation/</loc>
+    <loc>http://blog.mai168.cn/2017/06/23/quanpailie_digui/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1182,15 +1182,6 @@
   
   <url>
     <loc>http://blog.mai168.cn/2013/09/07/sington/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/01/15/spark_01_install/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1245,6 +1236,15 @@
   
   <url>
     <loc>http://blog.mai168.cn/2016/08/03/xinqin20160803/</loc>
+    
+    <lastmod>2019-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.mai168.cn/2018/01/15/spark_01_install/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1516,14 +1516,14 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/tags/%E9%80%92%E5%BD%92/</loc>
+    <loc>http://blog.mai168.cn/tags/%E5%85%A8%E6%8E%92%E5%88%97/</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/tags/%E5%85%A8%E6%8E%92%E5%88%97/</loc>
+    <loc>http://blog.mai168.cn/tags/%E9%80%92%E5%BD%92/</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1551,13 +1551,6 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/tags/spark/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.mai168.cn/tags/%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -1566,6 +1559,13 @@
   
   <url>
     <loc>http://blog.mai168.cn/tags/TCP%E9%87%8D%E4%BC%A0/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.mai168.cn/tags/spark/</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
