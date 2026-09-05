@@ -35,9 +35,14 @@ skip_render:
   - learn_opencode/**    # Next.js build output
   - learn_opencode/*.html
   - learn_opencode/**/*.html
+  - learn_harness/**    # Next.js build output
+  - learn_harness/*.html
+  - learn_harness/**/*.html
 include:
   - learn_opencode/_next/**    # Next.js assets are excluded by default (_ prefix)
   - learn_opencode/**/__next*  # Next.js RSC flight data files
+  - learn_harness/_next/**    # Next.js assets are excluded by default (_ prefix)
+  - learn_harness/**/__next*  # Next.js RSC flight data files
 
 # Writing
 new_post_name: :title.md # File name of new posts
