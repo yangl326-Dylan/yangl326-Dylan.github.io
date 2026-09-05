@@ -1,0 +1,29 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Configuration Cascade 配置级联",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "config", "label": "Config Cascade" }
+  ],
+  "nodes": [
+    { "id": "defaults", "lane": "config", "col": 0, "type": "backend", "label": "Defaults" },
+    { "id": "config-file", "lane": "config", "col": 1, "type": "backend", "label": "Config File" },
+    { "id": "env-vars", "lane": "config", "col": 2, "type": "cloud", "label": "Env Vars" },
+    { "id": "cli-args", "lane": "config", "col": 3, "type": "frontend", "label": "CLI Args" },
+    { "id": "merged", "lane": "config", "col": 4, "type": "database", "label": "Merged" }
+  ],
+  "edges": [
+    { "from": "defaults", "to": "merged", "label": "base" },
+    { "from": "config-file", "to": "merged", "label": "override" },
+    { "from": "env-vars", "to": "merged", "label": "override" },
+    { "from": "cli-args", "to": "merged", "label": "override" }
+  ],
+  "cards": [
+    { "dot": "slate", "title": "配置合并", "items": ["优先级: CLI > Env > Config > Defaults", "深度合并策略"] }
+  ]
+}

@@ -14,10 +14,10 @@
     { "id": "model", "type": "cloud", "label": "LLM", "sublabel": "Anthropic/OpenAI", "pos": [650, 200], "size": [150, 60] }
   ],
   "connections": [
-    { "from": "client", "to": "session", "label": "send" },
-    { "from": "session", "to": "messages", "label": "append" },
-    { "from": "messages", "to": "model", "label": "context" },
-    { "from": "model", "to": "session", "label": "response", "variant": "dashed" }
+    { "from": "client", "to": "session", "label": "send", "labelAt": [150, 190] },
+    { "from": "session", "to": "messages", "label": "append", "labelAt": [350, 190] },
+    { "from": "messages", "to": "model", "label": "context", "labelAt": [550, 190] },
+    { "from": "model", "to": "session", "label": "response", "variant": "dashed", "fromSide": "bottom", "toSide": "bottom", "labelAt": [450, 290] }
   ],
   "cards": [
     { "dot": "violet", "title": "会话架构", "items": ["消息追加写入日志", "模型从日志重建上下文"] }

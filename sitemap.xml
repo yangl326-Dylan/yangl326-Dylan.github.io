@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2017/08/08/20170808/</loc>
+    <loc>http://blog.mai168.cn/2017/08/24/20170824/</loc>
     
     <lastmod>2026-08-01</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2017/08/24/20170824/</loc>
+    <loc>http://blog.mai168.cn/2017/08/08/20170808/</loc>
     
     <lastmod>2026-08-01</lastmod>
     
@@ -920,6 +920,15 @@
   </url>
   
   <url>
+    <loc>http://blog.mai168.cn/2017/12/14/20171214/</loc>
+    
+    <lastmod>2019-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.mai168.cn/2018/03/09/20180309/</loc>
     
     <lastmod>2019-10-18</lastmod>
@@ -965,7 +974,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2018/11/13/20181026/</loc>
+    <loc>http://blog.mai168.cn/2018/11/28/20181128/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1019,16 +1028,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2017/12/14/20171214/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.mai168.cn/2018/11/28/20181128/</loc>
+    <loc>http://blog.mai168.cn/2018/11/13/20181026/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1163,15 +1163,6 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2016/04/12/raft/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.mai168.cn/2016/04/11/quorum_consensus_algorithm/</loc>
     
     <lastmod>2019-10-18</lastmod>
@@ -1235,15 +1226,6 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2016/06/30/xinqin20160630/</loc>
-    
-    <lastmod>2019-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.mai168.cn/2016/08/03/xinqin20160803/</loc>
     
     <lastmod>2019-10-18</lastmod>
@@ -1253,7 +1235,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2017/01/10/xinqin20170110/</loc>
+    <loc>http://blog.mai168.cn/2016/10/11/xinqin20161011/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1262,7 +1244,7 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/2016/10/11/xinqin20161011/</loc>
+    <loc>http://blog.mai168.cn/2017/01/10/xinqin20170110/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1281,6 +1263,24 @@
   
   <url>
     <loc>http://blog.mai168.cn/2017/06/23/%E7%BA%AA%E5%BF%B5%E6%97%A52017/</loc>
+    
+    <lastmod>2019-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.mai168.cn/2016/06/30/xinqin20160630/</loc>
+    
+    <lastmod>2019-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.mai168.cn/2016/04/12/raft/</loc>
     
     <lastmod>2019-10-18</lastmod>
     
@@ -1672,13 +1672,6 @@
   </url>
   
   <url>
-    <loc>http://blog.mai168.cn/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.mai168.cn/categories/%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -1687,6 +1680,13 @@
   
   <url>
     <loc>http://blog.mai168.cn/categories/%E5%AE%9E%E6%97%B6%E8%AE%A1%E7%AE%97/</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.mai168.cn/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

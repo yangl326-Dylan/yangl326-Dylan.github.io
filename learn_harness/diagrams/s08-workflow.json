@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Storage Layer 存储层",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Storage Flow" }
+  ],
+  "nodes": [
+    { "id": "write", "lane": "main", "col": 0, "type": "frontend", "label": "Write" },
+    { "id": "serialize", "lane": "main", "col": 1, "type": "backend", "label": "Serialize" },
+    { "id": "store", "lane": "main", "col": 2, "type": "database", "label": "Store" },
+    { "id": "read", "lane": "main", "col": 3, "type": "external", "label": "Read" }
+  ],
+  "edges": [
+    { "from": "write", "to": "serialize", "label": "data" },
+    { "from": "serialize", "to": "store", "label": "format" },
+    { "from": "store", "to": "read", "label": "query" }
+  ],
+  "cards": [
+    { "dot": "slate", "title": "存储层", "items": ["序列化/反序列化", "多后端支持"] }
+  ]
+}

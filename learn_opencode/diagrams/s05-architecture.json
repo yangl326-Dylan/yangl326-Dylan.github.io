@@ -15,10 +15,10 @@
     { "id": "db", "type": "database", "label": "Database", "sublabel": "PostgreSQL", "pos": [300, 450], "size": [200, 60] }
   ],
   "connections": [
-    { "from": "ui", "to": "api", "label": "HTTP" },
-    { "from": "api", "to": "service", "label": "call" },
-    { "from": "service", "to": "data", "label": "query" },
-    { "from": "data", "to": "db", "label": "SQL" }
+    { "from": "ui", "to": "api", "label": "HTTP", "labelAt": [400, 124] },
+    { "from": "api", "to": "service", "label": "call", "labelAt": [400, 224] },
+    { "from": "service", "to": "data", "label": "query", "labelAt": [400, 324] },
+    { "from": "data", "to": "db", "label": "SQL", "labelAt": [400, 424] }
   ],
   "cards": [
     { "dot": "rose", "title": "分层设计", "items": ["每层只依赖下一层", "职责分离，易于测试"] }

@@ -9,18 +9,18 @@
   },
   "components": [
     { "id": "agent", "type": "backend", "label": "Agent", "sublabel": "Core Loop", "pos": [300, 50], "size": [200, 60] },
-    { "id": "metrics", "type": "database", "label": "Metrics", "sublabel": "Counters", "pos": [150, 200], "size": [150, 60] },
-    { "id": "traces", "type": "database", "label": "Traces", "sublabel": "Spans", "pos": [450, 200], "size": [150, 60] },
-    { "id": "logs", "type": "database", "label": "Logs", "sublabel": "Structured", "pos": [300, 350], "size": [150, 60] },
-    { "id": "dashboard", "type": "frontend", "label": "Dashboard", "sublabel": "Grafana", "pos": [300, 450], "size": [200, 60] }
+    { "id": "metrics", "type": "database", "label": "Metrics", "sublabel": "Counters", "pos": [100, 200], "size": [150, 60] },
+    { "id": "traces", "type": "database", "label": "Traces", "sublabel": "Spans", "pos": [500, 200], "size": [150, 60] },
+    { "id": "logs", "type": "database", "label": "Logs", "sublabel": "Structured", "pos": [300, 200], "size": [150, 60] },
+    { "id": "dashboard", "type": "frontend", "label": "Dashboard", "sublabel": "Grafana", "pos": [300, 400], "size": [200, 60] }
   ],
   "connections": [
-    { "from": "agent", "to": "metrics", "label": "emit" },
-    { "from": "agent", "to": "traces", "label": "emit" },
-    { "from": "agent", "to": "logs", "label": "emit" },
-    { "from": "metrics", "to": "dashboard", "label": "query", "variant": "dashed" },
-    { "from": "traces", "to": "dashboard", "label": "query", "variant": "dashed" },
-    { "from": "logs", "to": "dashboard", "label": "query", "variant": "dashed" }
+    { "from": "agent", "to": "metrics", "label": "emit", "fromSide": "left", "toSide": "top", "labelAt": [200, 120] },
+    { "from": "agent", "to": "traces", "label": "emit", "fromSide": "right", "toSide": "top", "labelAt": [600, 120] },
+    { "from": "agent", "to": "logs", "label": "emit", "fromSide": "bottom", "toSide": "top", "labelAt": [300, 120] },
+    { "from": "metrics", "to": "dashboard", "label": "query", "variant": "dashed", "fromSide": "bottom", "toSide": "left", "labelAt": [200, 330] },
+    { "from": "traces", "to": "dashboard", "label": "query", "variant": "dashed", "fromSide": "bottom", "toSide": "right", "labelAt": [600, 330] },
+    { "from": "logs", "to": "dashboard", "label": "query", "variant": "dashed", "fromSide": "bottom", "toSide": "top", "labelAt": [300, 330] }
   ],
   "cards": [
     { "dot": "cyan", "title": "可观测性", "items": ["三大支柱: Metrics, Traces, Logs", "实时监控 agent 性能"] }

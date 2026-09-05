@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Plugin Communication 插件通信",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Plugin Communication" }
+  ],
+  "nodes": [
+    { "id": "plugin-a", "lane": "main", "col": 0, "type": "frontend", "label": "Plugin A" },
+    { "id": "channel", "lane": "main", "col": 1, "type": "backend", "label": "Channel" },
+    { "id": "plugin-b", "lane": "main", "col": 2, "type": "backend", "label": "Plugin B" },
+    { "id": "response", "lane": "main", "col": 3, "type": "external", "label": "Response" }
+  ],
+  "edges": [
+    { "from": "plugin-a", "to": "channel", "label": "message" },
+    { "from": "channel", "to": "plugin-b", "label": "deliver" },
+    { "from": "plugin-b", "to": "response", "label": "reply" }
+  ],
+  "cards": [
+    { "dot": "violet", "title": "插件通信", "items": ["消息通道", "松耦合交互"] }
+  ]
+}

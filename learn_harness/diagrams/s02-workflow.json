@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Tool Registry 工具注册",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Tool Registration" }
+  ],
+  "nodes": [
+    { "id": "define", "lane": "main", "col": 0, "type": "frontend", "label": "Define Tool" },
+    { "id": "schema", "lane": "main", "col": 1, "type": "backend", "label": "Schema" },
+    { "id": "register", "lane": "main", "col": 2, "type": "backend", "label": "Register" },
+    { "id": "available", "lane": "main", "col": 3, "type": "external", "label": "Available" }
+  ],
+  "edges": [
+    { "from": "define", "to": "schema", "label": "input/output" },
+    { "from": "schema", "to": "register", "label": "validate" },
+    { "from": "register", "to": "available", "label": "" }
+  ],
+  "cards": [
+    { "dot": "violet", "title": "工具注册", "items": ["声明式 schema 定义", "运行时自动注册"] }
+  ]
+}
