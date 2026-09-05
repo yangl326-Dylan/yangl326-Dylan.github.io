@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Agent Loop 循环流程",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Agent Loop" }
+  ],
+  "nodes": [
+    { "id": "start", "lane": "main", "col": 0, "type": "frontend", "label": "Start" },
+    { "id": "call-llm", "lane": "main", "col": 1, "type": "backend", "label": "Call LLM" },
+    { "id": "check-tool", "lane": "main", "col": 2, "type": "cloud", "label": "tool_use?" },
+    { "id": "execute-tool", "lane": "main", "col": 3, "type": "backend", "label": "Execute Tool" },
+    { "id": "end", "lane": "main", "col": 4, "type": "external", "label": "End" }
+  ],
+  "edges": [
+    { "from": "start", "to": "call-llm", "label": "" },
+    { "from": "call-llm", "to": "check-tool", "label": "" },
+    { "from": "check-tool", "to": "execute-tool", "label": "Yes", "variant": "emphasis", "role": "main" },
+    { "from": "check-tool", "to": "end", "label": "No → Break", "variant": "dashed", "role": "branch" },
+    { "from": "execute-tool", "to": "call-llm", "label": "Feed result back", "role": "return" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "核心循环", "items": ["while-true 循环直到模型完成", "每次迭代 = 思考 → 行动 → 观察"] }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Layered Architecture 分层架构",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "components": [
+    { "id": "ui", "type": "frontend", "label": "UI Layer", "sublabel": "User Interface", "pos": [300, 50], "size": [200, 60] },
+    { "id": "api", "type": "backend", "label": "API Layer", "sublabel": "REST/GraphQL", "pos": [300, 150], "size": [200, 60] },
+    { "id": "service", "type": "backend", "label": "Service Layer", "sublabel": "Business Logic", "pos": [300, 250], "size": [200, 60] },
+    { "id": "data", "type": "database", "label": "Data Layer", "sublabel": "ORM/SQL", "pos": [300, 350], "size": [200, 60] },
+    { "id": "db", "type": "database", "label": "Database", "sublabel": "PostgreSQL", "pos": [300, 450], "size": [200, 60] }
+  ],
+  "connections": [
+    { "from": "ui", "to": "api", "label": "HTTP" },
+    { "from": "api", "to": "service", "label": "call" },
+    { "from": "service", "to": "data", "label": "query" },
+    { "from": "data", "to": "db", "label": "SQL" }
+  ],
+  "cards": [
+    { "dot": "rose", "title": "分层设计", "items": ["每层只依赖下一层", "职责分离，易于测试"] }
+  ]
+}

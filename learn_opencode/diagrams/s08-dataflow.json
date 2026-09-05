@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Configuration Cascade 配置级联",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "nodes": [
+    { "id": "defaults", "type": "backend", "label": "Defaults", "pos": [300, 50], "size": [200, 60] },
+    { "id": "config", "type": "backend", "label": "Config File", "pos": [300, 150], "size": [200, 60] },
+    { "id": "env", "type": "cloud", "label": "Env Vars", "pos": [300, 250], "size": [200, 60] },
+    { "id": "cli", "type": "frontend", "label": "CLI Args", "pos": [300, 350], "size": [200, 60] },
+    { "id": "merged", "type": "database", "label": "Merged Config", "pos": [300, 450], "size": [200, 60] }
+  ],
+  "flows": [
+    { "from": "defaults", "to": "merged", "label": "override" },
+    { "from": "config", "to": "merged", "label": "override" },
+    { "from": "env", "to": "merged", "label": "override" },
+    { "from": "cli", "to": "merged", "label": "override" }
+  ],
+  "cards": [
+    { "dot": "slate", "title": "配置合并", "items": ["优先级: CLI > Env > Config > Defaults", "深度合并策略"] }
+  ]
+}

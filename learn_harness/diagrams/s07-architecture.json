@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Shell & Subprocess 子进程",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "components": [
+    { "id": "interface", "type": "backend", "label": "Shell Interface", "sublabel": "Unified API", "pos": [300, 50], "size": [200, 60] },
+    { "id": "local", "type": "cloud", "label": "Local", "sublabel": "Local Shell", "pos": [150, 200], "size": [150, 60] },
+    { "id": "remote", "type": "cloud", "label": "Remote", "sublabel": "SSH", "pos": [450, 200], "size": [150, 60] },
+    { "id": "sandbox", "type": "security", "label": "Sandbox", "sublabel": "Docker", "pos": [300, 350], "size": [150, 60] }
+  ],
+  "connections": [
+    { "from": "interface", "to": "local", "label": "implements" },
+    { "from": "interface", "to": "remote", "label": "implements" },
+    { "from": "interface", "to": "sandbox", "label": "implements" }
+  ],
+  "cards": [
+    { "dot": "slate", "title": "Shell 能力", "items": ["统一接口支持多种后端", "本地、远程、沙箱"] }
+  ]
+}

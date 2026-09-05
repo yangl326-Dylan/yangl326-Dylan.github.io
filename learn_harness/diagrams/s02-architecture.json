@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Session Log 会话日志",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "components": [
+    { "id": "user", "type": "frontend", "label": "User", "sublabel": "Input", "pos": [50, 200], "size": [150, 60] },
+    { "id": "log", "type": "database", "label": "Session Log", "sublabel": "Append-only", "pos": [250, 200], "size": [150, 60] },
+    { "id": "model", "type": "cloud", "label": "Model", "sublabel": "LLM", "pos": [450, 200], "size": [150, 60] },
+    { "id": "tools", "type": "backend", "label": "Tools", "sublabel": "Execute", "pos": [650, 200], "size": [150, 60] }
+  ],
+  "connections": [
+    { "from": "user", "to": "log", "label": "append" },
+    { "from": "log", "to": "model", "label": "context" },
+    { "from": "model", "to": "tools", "label": "tool_use" },
+    { "from": "tools", "to": "log", "label": "result", "variant": "dashed" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "日志架构", "items": ["追加写入确保数据完整", "所有模型可见信息可重建"] }
+  ]
+}
