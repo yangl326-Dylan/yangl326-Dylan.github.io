@@ -1,0 +1,75 @@
+{
+  "meta": { "title": "Learn DeepSeek Harness", "description": "从零理解 DeepSeek Harness agent 架构与插件系统" },
+  "nav": { "home": "首页", "timeline": "学习路径", "github": "GitHub" },
+  "home": {
+    "hero_title": "Learn DeepSeek Harness",
+    "hero_subtitle": "从零理解 agent harness 架构，一个机制一节课",
+    "start": "开始学习",
+    "core_pattern": "核心模式",
+    "core_pattern_desc": "DeepSeek Harness 使用基于 Cordis 的一切皆插件架构。没有特权核心——包括模型适配器和 agent 循环在内的每个部分都是可替换的插件。",
+    "learning_path": "学习路径",
+    "learning_path_desc": "10 节渐进式课程，从插件基础到事件系统",
+    "layers_title": "架构分层",
+    "layers_desc": "九个正交的关注点，组合成完整的 agent harness",
+    "architecture_title": "系统架构",
+    "architecture_desc": "九层架构组合成完整的 agent harness，每层构建在下一层之上",
+    "loc": "行",
+    "versions_in_layer": "个版本"
+  },
+  "version": {
+    "loc": "行代码",
+    "tools": "工具",
+    "new": "新增",
+    "prev": "上一节",
+    "next": "下一节",
+    "design_decisions": "设计决策",
+    "key_insight": "核心洞察",
+    "tab_learn": "学习",
+    "tab_code": "代码",
+    "tab_design": "设计"
+  },
+  "timeline": {
+    "title": "学习路径",
+    "subtitle": "s01 到 s10：渐进式 Harness 架构",
+    "layer_legend": "分层图例",
+    "loc_growth": "代码量增长"
+  },
+  "layers": {
+    "architecture": "基础层。Cordis 插件系统，一切皆可替换。",
+    "data": "会话日志与持久化事实。追加写入的事件存储。",
+    "core": "Agent 循环。轮次、步骤与生命周期管理。",
+    "execution": "工具与 Shell 执行。作用域注册表与提供者。",
+    "design": "能力接缝。服务定义 → 提供者 → 消费者模式。",
+    "model": "LLM 集成。适配器与流式处理。",
+    "planning": "子代理委派与子代理。",
+    "config": "配置组合与 bundle 层。",
+    "extensibility": "事件系统与 waterfall 语义。"
+  },
+  "sessions": {
+    "s01": "插件基础", "s02": "会话日志", "s03": "Agent 循环", "s04": "工具系统",
+    "s05": "能力接缝", "s06": "LLM 集成", "s07": "Shell 与子进程", "s08": "子代理系统",
+    "s09": "配置与 Bundle", "s10": "事件系统"
+  },
+  "session_details": {
+    "s01_title": "插件基础",
+    "s01_desc": "Cordis 提供一切皆插件的架构。没有特权核心——每个部分都是可替换的。",
+    "s02_title": "会话日志",
+    "s02_desc": "追加写入的事件日志，作为单一事实来源。模型看到的一切都必须能从中重建。",
+    "s03_title": "Agent 循环",
+    "s03_desc": "轮次/步骤生命周期管理。步骤是一次模型请求加工具调用；轮次将步骤分组为连贯的工作单元。",
+    "s04_title": "工具系统",
+    "s04_desc": "带作用域的工具注册表，配有预执行/后执行管道。工具通过守卫进行验证。",
+    "s05_title": "能力接缝",
+    "s05_desc": "三角色模式：服务定义、服务提供者、消费者。替换一个提供者就能改变整个产品。",
+    "s06_title": "LLM 集成",
+    "s06_desc": "LLM 适配器接缝，提供消息词汇和流式处理。提供者注册适配器处理实际的 API 调用。",
+    "s07_title": "Shell 与子进程",
+    "s07_desc": "Shell 执行能力，本地、远程或沙箱提供者共享同一接口。",
+    "s08_title": "子代理系统",
+    "s08_desc": "子代理能力接缝，用于委派。子代理获得干净的上下文，同时保留主线程。",
+    "s09_title": "配置与 Bundle",
+    "s09_desc": "配置组合系统，bundle 按顺序堆叠。每层都可以修补下面的配置。",
+    "s10_title": "事件系统",
+    "s10_desc": "类型化事件映射，具有 waterfall 语义。监听器必须调用 next() 来委派，否则会短路链。"
+  }
+}

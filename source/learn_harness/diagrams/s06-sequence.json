@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "LLM Integration 集成",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "participants": [
+    { "id": "agent", "type": "backend", "label": "Agent" },
+    { "id": "llm", "type": "cloud", "label": "LLM Layer" },
+    { "id": "provider", "type": "external", "label": "Provider" }
+  ],
+  "segments": [
+    { "from": "agent", "to": "llm", "label": "messages.create()" },
+    { "from": "llm", "to": "provider", "label": "API call" },
+    { "from": "provider", "to": "llm", "label": "stream" },
+    { "from": "llm", "to": "agent", "label": "response" }
+  ],
+  "cards": [
+    { "dot": "orange", "title": "LLM 层", "items": ["消息词汇和流式传输", "提供商注册适配器"] }
+  ]
+}

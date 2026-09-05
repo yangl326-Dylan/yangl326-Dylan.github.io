@@ -1,0 +1,19 @@
+{
+  "version": "s04",
+  "decisions": [
+    {
+      "id": "hooks-not-inheritance",
+      "title": "Hooks over Inheritance or Middleware",
+      "description": "Plugins register hooks at specific lifecycle points (beforeTool, afterTool, onMessage, etc.) rather than subclassing the agent. This keeps the core loop intact and makes plugin behavior composable.",
+      "alternatives": "Middleware (express-style) or subclassing could work, but hooks provide clearer lifecycle semantics and prevent middleware ordering bugs.",
+      "zh": { "title": "钩子优于继承或中间件", "description": "插件在特定生命周期点注册钩子，而不是继承 agent。这保持了核心循环的完整性，并使插件行为可组合。", "alternatives": "中间件或子类化也可以工作，但钩子提供了更清晰的生命周期语义，防止中间件排序错误。" }
+    },
+    {
+      "id": "hook-timeout",
+      "title": "Hooks Must Be Non-Blocking by Default",
+      "description": "A slow or broken hook should not block the agent. Each hook runs with a timeout, and failures are logged rather than propagated. The agent continues even if a hook errors.",
+      "alternatives": "Hard-fail on hook error would be simpler but makes the system fragile. Soft-fail with logging is more production-robust.",
+      "zh": { "title": "钩子默认必须非阻塞", "description": "慢速或损坏的钩子不应阻塞 agent。每个钩子有超时，失败会被记录而不是传播。即使钩子出错，agent 也继续运行。", "alternatives": "钩子错误时硬失败更简单，但会使系统脆弱。带日志的软失败更健壮。" }
+    }
+  ]
+}

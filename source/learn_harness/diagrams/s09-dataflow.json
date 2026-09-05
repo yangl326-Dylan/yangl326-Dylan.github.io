@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Profile & Bundles 配置包",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "nodes": [
+    { "id": "base", "type": "backend", "label": "Base Bundle", "pos": [300, 50], "size": [200, 60] },
+    { "id": "web", "type": "frontend", "label": "Web Bundle", "pos": [300, 150], "size": [200, 60] },
+    { "id": "user", "type": "cloud", "label": "User Patches", "pos": [300, 250], "size": [200, 60] },
+    { "id": "final", "type": "database", "label": "Final Config", "pos": [300, 350], "size": [200, 60] }
+  ],
+  "flows": [
+    { "from": "base", "to": "final", "label": "merge" },
+    { "from": "web", "to": "final", "label": "merge" },
+    { "from": "user", "to": "final", "label": "merge" }
+  ],
+  "cards": [
+    { "dot": "violet", "title": "配置堆叠", "items": ["Bundle 按顺序堆叠", "每层可修补下层配置"] }
+  ]
+}

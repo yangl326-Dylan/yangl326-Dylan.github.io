@@ -26,6 +26,7 @@ export interface SessionContent {
   learnSections: LearnSection[];
   designHighlights: { en: string; zh: string }[];
   flowchartSvg: string;
+  flowchartHtml?: string;
   annotatedCode: AnnotatedCode;
   claudeCodeComparison: { en: string; zh: string };
 }
@@ -117,6 +118,7 @@ export const SESSION_CONTENT: Record<string, SessionContent> = {
   <line x1="250" y1="285" x2="250" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrow-s01)"/>
   <text x="430" y="260" fill="#666" font-size="10" font-family="system-ui">Feed result back</text>
 </svg>`,
+    flowchartHtml: "s01-workflow.html",
     annotatedCode: {
       overview: {
         en: "The agent loop is a concise while loop with four stages: call the model, check for tool calls, execute tools, and repeat. The entire architecture fits in roughly 15 lines.",
@@ -196,7 +198,6 @@ while True:
       { en: "Handlers receive `**input`, unpacked keyword arguments, meaning each tool defines its own parameter schema. The dispatch table does not need to know or validate parameters. That responsibility belongs to the handler.", zh: "处理函数接收 `**input`（解包后的关键字参数），这意味着每个工具定义自己的参数模式。调度表不需要了解或验证参数，那是处理函数的职责。" },
     ],
     flowchartSvg: `<svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
-  <defs>
     <marker id="arrow-s02" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#666"/></marker>
   </defs>
   <rect x="10" y="10" width="480" height="340" rx="8" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.4"/>
@@ -232,10 +233,11 @@ while True:
   <text x="250" y="333" text-anchor="middle" fill="#fff" font-size="11" font-family="system-ui">return result string</text>
   <line x1="250" y1="306" x2="250" y2="315" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-s02)"/>
 </svg>`,
+    flowchartHtml: "s03-lifecycle.html",
     annotatedCode: {
       overview: {
-        en: "The dispatch table pattern decouples tool registration from the agent loop. execute_tool() is a five-line function that never needs to change, regardless of how many tools exist.",
-        zh: "调度表模式将工具注册与 agent 循环解耦。execute_tool() 是一个仅含五行代码的函数，无论有多少工具，它都无需修改。",
+        en: "The dispatch map uses `dict.get(name)` with a fallback to `None` rather than `dict[name]`, which would raise a KeyError. This means unknown tool names produce a friendly error message instead of crashing the agent.",
+        zh: "调度表使用 `dict.get(name)` 并回退到 `None`，而非使用会引发 KeyError 的 `dict[name]`。这意味着未知的工具名称会产生友好的错误消息，而不是让 agent 崩溃。",
       },
       annotations: [
         { lineStart: 1, lineEnd: 6, text: "The dispatch table is a plain dictionary. Each key is a tool name matching what the LLM outputs in tool_use.name, and each value is a handler function. Adding a new tool requires one new line in this dictionary.", zhText: "调度表是一个普通字典。每个键对应一个工具名称（与 LLM 在 tool_use.name 中输出的内容匹配），每个值对应一个处理函数。添加新工具只需在该字典中增加一行。" },
@@ -293,7 +295,6 @@ while True:
       { en: "Danger level classification is not hardcoded. Plugins can register custom classifiers or override default ones through hooks. This allows organizations to enforce their own security policies.", zh: "危险级别分类并非硬编码。插件可以通过钩子注册自定义分类器或覆盖默认分类器。这使得组织能够执行自己的安全策略。" },
     ],
     flowchartSvg: `<svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
-  <defs>
     <marker id="arrow-s03" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#666"/></marker>
   </defs>
   <!-- Incoming call -->
@@ -331,6 +332,7 @@ while True:
   <line x1="390" y1="295" x2="390" y2="165" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-s03)"/>
   <text x="390" y="240" fill="#10b981" font-size="10" font-family="system-ui">Yes → Execute</text>
 </svg>`,
+    flowchartHtml: "s04-workflow.html",
     annotatedCode: {
       overview: {
         en: "The permission gate wraps tool execution with a security check. classifyAction() determines the danger level, and only dangerous operations trigger user prompts. Safe operations proceed without user visibility.",
@@ -404,7 +406,6 @@ for (const hook of registeredHooks["tool.execute.before"]) {
       { en: "Hook registration order matters. Plugins registered first have their hooks executed first. This enables priority-based behavior: a security plugin can validate input before a logging plugin records it.", zh: "钩子的注册顺序非常重要。先注册的插件，其钩子优先执行。这实现了基于优先级的行为编排：安全插件可在日志插件记录输入之前先行验证。" },
     ],
     flowchartSvg: `<svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
-  <defs>
     <marker id="arrow-s04" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#666"/></marker>
   </defs>
   <!-- Core loop box -->
@@ -526,7 +527,6 @@ function dispatchTask(input) {
       { en: "Tool availability is restricted per category. A 'quick' agent does not receive write access. It can only read and edit existing files. This provides an additional safety boundary beyond the permission gate.", zh: "每个类别的工具可用性受到限制。'quick' agent 不具备写入权限，只能读取和编辑已有文件。这是在权限门之外又增加了一层安全边界。" },
     ],
     flowchartSvg: `<svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
-  <defs>
     <marker id="arrow-s05" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#666"/></marker>
   </defs>
   <!-- Input -->
@@ -651,7 +651,6 @@ async function callSubagent(name, task) {
       { en: "Subagent results are returned as structured data rather than being appended to the parent's message history as a flat string. This enables the parent to parse, validate, and selectively incorporate the subagent's output.", zh: "子代理的结果以结构化数据形式返回，而非以纯文本字符串附加到父级的消息历史中。这使得父级能够解析、验证并有选择性地整合子代理的输出。" },
     ],
     flowchartSvg: `<svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
-  <defs>
     <marker id="arrow-s06" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#666"/></marker>
   </defs>
   <!-- Main agent -->
@@ -692,6 +691,7 @@ async function callSubagent(name, task) {
   <!-- Clean context note -->
   <text x="250" y="340" text-anchor="middle" fill="#666" font-size="10" font-family="system-ui">Each subagent = fresh agentLoop() + clean message history</text>
 </svg>`,
+    flowchartHtml: "s07-workflow.html",
     annotatedCode: {
       overview: {
         en: "Subagents are named agent configurations dispatched with a clean context. callSubagent() creates a fresh agent loop with a tailored system prompt and an isolated message history.",
@@ -865,7 +865,6 @@ export default function myPlugin() {
       { en: "The 'experimental.' prefix on certain hooks signals that their API may change. This gives the core team freedom to evolve while providing plugin authors early access. Once stabilized, the prefix is removed.", zh: "某些钩子上的 'experimental.' 前缀表示其 API 可能发生变化。这为核心团队保留了演进自由，同时为插件作者提供早期访问权限。稳定后，该前缀会被移除。" },
     ],
     flowchartSvg: `<svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
-  <defs>
     <marker id="arrow-s08" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#666"/></marker>
   </defs>
   <!-- Plugin SDK box -->
@@ -979,7 +978,6 @@ const taskId = await runBackground("build", () =>
       { en: "The event bus runs synchronously within the agent process. There is no message queue, no serialization, and no network. This keeps latency near zero and avoids the complexity of distributed systems.", zh: "事件总线在 agent 进程内同步运行。没有消息队列，没有序列化，没有网络延迟。这使延迟接近于零，并避免了分布式系统的复杂性。" },
     ],
     flowchartSvg: `<svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
-  <defs>
     <marker id="arrow-s09" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#666"/></marker>
   </defs>
   <!-- Agent Loop -->
@@ -1126,6 +1124,7 @@ function loadConfig() {
   <text x="250" y="293" text-anchor="middle" fill="#fff" font-size="12" font-family="system-ui">Agent starts with merged config</text>
   <line x1="250" y1="245" x2="250" y2="268" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-s10)"/>
 </svg>`,
+    flowchartHtml: "s10-lifecycle.html",
     annotatedCode: {
       overview: {
         en: "The config system uses a two-tier merge pattern: global defaults plus project overrides produce the effective configuration. deepMerge() handles nested objects so partial overrides work intuitively.",

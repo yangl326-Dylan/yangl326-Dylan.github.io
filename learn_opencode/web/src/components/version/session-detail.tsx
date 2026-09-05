@@ -52,10 +52,18 @@ function LearnTab({
             >
               ✕
             </button>
-            <div
-              className="min-w-[500px]"
-              dangerouslySetInnerHTML={{ __html: content.flowchartSvg }}
-            />
+            {content.flowchartHtml ? (
+              <iframe
+                src={`/learn_opencode/diagrams/${content.flowchartHtml}`}
+                className="min-w-[800px] min-h-[600px] border-0"
+                title="Architecture Diagram"
+              />
+            ) : (
+              <div
+                className="min-w-[500px]"
+                dangerouslySetInnerHTML={{ __html: content.flowchartSvg }}
+              />
+            )}
           </div>
         </div>
       )}
@@ -78,10 +86,18 @@ function LearnTab({
             {locale === "zh" ? "全屏查看" : "Full Screen"}
           </button>
         </div>
-        <div
-          className="overflow-x-auto rounded-xl border border-[var(--color-border)] bg-white p-4 dark:bg-zinc-950 max-w-xl mx-auto"
-          dangerouslySetInnerHTML={{ __html: content.flowchartSvg }}
-        />
+        {content.flowchartHtml ? (
+          <iframe
+            src={`/learn_opencode/diagrams/${content.flowchartHtml}`}
+            className="w-full h-[400px] border-0 rounded-xl"
+            title="Architecture Diagram"
+          />
+        ) : (
+          <div
+            className="overflow-x-auto rounded-xl border border-[var(--color-border)] bg-white p-4 dark:bg-zinc-950 max-w-xl mx-auto"
+            dangerouslySetInnerHTML={{ __html: content.flowchartSvg }}
+          />
+        )}
       </div>
 
       {/* Learn Sections */}

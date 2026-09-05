@@ -1,0 +1,75 @@
+{
+  "meta": { "title": "Learn DeepSeek Harness", "description": "Understand DeepSeek Harness agent architecture and plugin system from scratch" },
+  "nav": { "home": "Home", "timeline": "Timeline", "github": "GitHub" },
+  "home": {
+    "hero_title": "Learn DeepSeek Harness",
+    "hero_subtitle": "Understand agent harness architecture from scratch, one mechanism at a time",
+    "start": "Start Learning",
+    "core_pattern": "The Core Pattern",
+    "core_pattern_desc": "DeepSeek Harness uses an everything-is-a-plugin architecture powered by Cordis. Every part, including the model adapter and agent loop, is a replaceable plugin.",
+    "learning_path": "Learning Path",
+    "learning_path_desc": "10 progressive sessions, from plugin foundation to event system",
+    "layers_title": "Architectural Layers",
+    "layers_desc": "Nine orthogonal concerns that compose into a complete agent harness",
+    "architecture_title": "System Architecture",
+    "architecture_desc": "Nine layers compose into a complete agent harness. Each layer builds on the one below it.",
+    "loc": "LOC",
+    "versions_in_layer": "versions"
+  },
+  "version": {
+    "loc": "lines of code",
+    "tools": "tools",
+    "new": "New",
+    "prev": "Previous",
+    "next": "Next",
+    "design_decisions": "Design Decisions",
+    "key_insight": "Key Insight",
+    "tab_learn": "Learn",
+    "tab_code": "Code",
+    "tab_design": "Design"
+  },
+  "timeline": {
+    "title": "Learning Path",
+    "subtitle": "s01 to s10: Progressive Harness Architecture",
+    "layer_legend": "Layer Legend",
+    "loc_growth": "LOC Growth"
+  },
+  "layers": {
+    "architecture": "The foundation. Cordis plugin system where everything is a replaceable plugin.",
+    "data": "Session log and durable facts. Append-only event storage.",
+    "core": "The agent loop. Turns, steps, and lifecycle management.",
+    "execution": "Tool and shell execution. Scoped registries and providers.",
+    "design": "Capability seams. Service Definition → Provider → Consumer pattern.",
+    "model": "LLM integration. Adapters and streaming.",
+    "planning": "Subagent delegation and child agents.",
+    "config": "Profile composition and bundle layers.",
+    "extensibility": "Event system and waterfall semantics."
+  },
+  "sessions": {
+    "s01": "Plugin Foundation", "s02": "Session Log", "s03": "Agent Loop", "s04": "Tool System",
+    "s05": "Capability Seams", "s06": "LLM Integration", "s07": "Shell & Subprocess", "s08": "Subagent System",
+    "s09": "Profile & Bundles", "s10": "Event System"
+  },
+  "session_details": {
+    "s01_title": "The Plugin Foundation",
+    "s01_desc": "Cordis provides the everything-is-a-plugin architecture. No privileged core — every part is replaceable.",
+    "s02_title": "Session Log",
+    "s02_desc": "Append-only event log that serves as the source of truth. Everything the model sees must be reconstructable from it.",
+    "s03_title": "Agent Loop",
+    "s03_desc": "Turn/step lifecycle management. A step is one model request plus tools; a turn groups steps into coherent work.",
+    "s04_title": "Tool System",
+    "s04_desc": "Scoped tool registry with pre/post execution pipeline. Tools are registered with guards for validation.",
+    "s05_title": "Capability Seams",
+    "s05_desc": "Three-role pattern: Service Definition, Service Provider, Consumer. Swapping one provider changes the whole product.",
+    "s06_title": "LLM Integration",
+    "s06_desc": "LLM adapter seam with message vocabulary and streaming. Providers register adapters for actual API calls.",
+    "s07_title": "Shell & Subprocess",
+    "s07_desc": "Shell execution capability with local, remote, or sandboxed providers sharing one interface.",
+    "s08_title": "Subagent System",
+    "s08_desc": "Subagent capability seam for delegation. Child agents get clean context while preserving the main thread.",
+    "s09_title": "Profile & Bundles",
+    "s09_desc": "Profile composition system where bundles stack in order. Each layer can patch the config below it.",
+    "s10_title": "Event System",
+    "s10_desc": "Typed event map with waterfall semantics. Listeners must call next() to delegate, otherwise they short-circuit."
+  }
+}
