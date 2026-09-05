@@ -8,7 +8,13 @@ public/
 _multiconfig.yml
 
 # Learn OpenCode generated files
-source/learn_opencode/
+# source/learn_opencode/
 learn_opencode/web/out/
 learn_opencode/web/.next/
 learn_opencode/web/node_modules/
+
+# Learn Harness generated files
+source/learn_harness/
+learn_harness/web/out/
+learn_harness/web/.next/
+learn_harness/web/node_modules/

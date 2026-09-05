@@ -1,0 +1,29 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Middleware Pipeline 中间件管道",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Pipeline" }
+  ],
+  "nodes": [
+    { "id": "request", "lane": "main", "col": 0, "type": "frontend", "label": "Request" },
+    { "id": "auth", "lane": "main", "col": 1, "type": "security", "label": "Auth" },
+    { "id": "validate", "lane": "main", "col": 2, "type": "backend", "label": "Validate" },
+    { "id": "process", "lane": "main", "col": 3, "type": "backend", "label": "Process" },
+    { "id": "response", "lane": "main", "col": 4, "type": "external", "label": "Response" }
+  ],
+  "edges": [
+    { "from": "request", "to": "auth", "label": "" },
+    { "from": "auth", "to": "validate", "label": "next()" },
+    { "from": "validate", "to": "process", "label": "next()" },
+    { "from": "process", "to": "response", "label": "next()" }
+  ],
+  "cards": [
+    { "dot": "amber", "title": "中间件链", "items": ["每个中间件调用 next() 传递", "支持前置/后置处理"] }
+  ]
+}

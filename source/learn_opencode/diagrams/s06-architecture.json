@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Session Model 会话模型",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "components": [
+    { "id": "client", "type": "frontend", "label": "Client", "sublabel": "User", "pos": [50, 200], "size": [150, 60] },
+    { "id": "session", "type": "backend", "label": "Session", "sublabel": "State Manager", "pos": [250, 200], "size": [150, 60] },
+    { "id": "messages", "type": "database", "label": "Messages", "sublabel": "Append-only Log", "pos": [450, 200], "size": [150, 60] },
+    { "id": "model", "type": "cloud", "label": "LLM", "sublabel": "Anthropic/OpenAI", "pos": [650, 200], "size": [150, 60] }
+  ],
+  "connections": [
+    { "from": "client", "to": "session", "label": "send" },
+    { "from": "session", "to": "messages", "label": "append" },
+    { "from": "messages", "to": "model", "label": "context" },
+    { "from": "model", "to": "session", "label": "response", "variant": "dashed" }
+  ],
+  "cards": [
+    { "dot": "violet", "title": "会话架构", "items": ["消息追加写入日志", "模型从日志重建上下文"] }
+  ]
+}

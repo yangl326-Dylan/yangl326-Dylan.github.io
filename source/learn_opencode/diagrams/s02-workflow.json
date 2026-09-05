@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Tool Dispatch 调度流程",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Tool Dispatch" }
+  ],
+  "nodes": [
+    { "id": "tool-call", "lane": "main", "col": 0, "type": "frontend", "label": "Tool Call" },
+    { "id": "dispatch-map", "lane": "main", "col": 1, "type": "backend", "label": "Dispatch Map" },
+    { "id": "execute", "lane": "main", "col": 2, "type": "backend", "label": "Execute Handler" },
+    { "id": "result", "lane": "main", "col": 3, "type": "external", "label": "Return Result" }
+  ],
+  "edges": [
+    { "from": "tool-call", "to": "dispatch-map", "label": "name + input" },
+    { "from": "dispatch-map", "to": "execute", "label": "handler()" },
+    { "from": "execute", "to": "result", "label": "output" }
+  ],
+  "cards": [
+    { "dot": "violet", "title": "调度表模式", "items": ["TOOL_MAP 映射工具名到处理函数", "添加新工具只需一行注册代码"] }
+  ]
+}

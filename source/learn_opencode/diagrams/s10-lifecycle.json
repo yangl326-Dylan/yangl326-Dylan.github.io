@@ -1,0 +1,30 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Error Handling 错误处理",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Error Handling" }
+  ],
+  "nodes": [
+    { "id": "try", "lane": "main", "col": 0, "type": "frontend", "label": "Try" },
+    { "id": "success", "lane": "main", "col": 1, "type": "backend", "label": "Success" },
+    { "id": "catch", "lane": "main", "col": 2, "type": "security", "label": "Catch" },
+    { "id": "retry", "lane": "main", "col": 3, "type": "backend", "label": "Retry" },
+    { "id": "fail", "lane": "main", "col": 4, "type": "external", "label": "Fail" }
+  ],
+  "edges": [
+    { "from": "try", "to": "success", "label": "ok", "variant": "emphasis" },
+    { "from": "try", "to": "catch", "label": "error", "variant": "dashed" },
+    { "from": "catch", "to": "retry", "label": "retryable" },
+    { "from": "retry", "to": "try", "label": "retry", "role": "return" },
+    { "from": "catch", "to": "fail", "label": "fatal", "variant": "dashed" }
+  ],
+  "cards": [
+    { "dot": "rose", "title": "错误策略", "items": ["可重试错误自动重试", "致命错误立即失败"] }
+  ]
+}

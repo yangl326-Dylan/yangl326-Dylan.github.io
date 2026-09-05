@@ -1,0 +1,28 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "State Machine 状态机",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "State Machine" }
+  ],
+  "nodes": [
+    { "id": "idle", "lane": "main", "col": 0, "type": "frontend", "label": "Idle" },
+    { "id": "running", "lane": "main", "col": 1, "type": "backend", "label": "Running" },
+    { "id": "tool-call", "lane": "main", "col": 2, "type": "cloud", "label": "Tool Call" },
+    { "id": "completed", "lane": "main", "col": 3, "type": "external", "label": "Completed" }
+  ],
+  "edges": [
+    { "from": "idle", "to": "running", "label": "start" },
+    { "from": "running", "to": "tool-call", "label": "tool_use", "variant": "emphasis" },
+    { "from": "tool-call", "to": "running", "label": "result", "role": "return" },
+    { "from": "running", "to": "completed", "label": "done", "variant": "dashed" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "状态转换", "items": ["Idle → Running → Tool Call → Running", "最终状态: Completed"] }
+  ]
+}

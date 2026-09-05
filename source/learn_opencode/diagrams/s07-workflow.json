@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Streaming Pipeline 流式管道",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Streaming" }
+  ],
+  "nodes": [
+    { "id": "input", "lane": "main", "col": 0, "type": "frontend", "label": "Input" },
+    { "id": "transform", "lane": "main", "col": 1, "type": "backend", "label": "Transform" },
+    { "id": "buffer", "lane": "main", "col": 2, "type": "database", "label": "Buffer" },
+    { "id": "output", "lane": "main", "col": 3, "type": "external", "label": "Output" }
+  ],
+  "edges": [
+    { "from": "input", "to": "transform", "label": "chunk" },
+    { "from": "transform", "to": "buffer", "label": "process" },
+    { "from": "buffer", "to": "output", "label": "emit" }
+  ],
+  "cards": [
+    { "dot": "orange", "title": "流式处理", "items": ["逐块处理数据", "支持背压控制"] }
+  ]
+}

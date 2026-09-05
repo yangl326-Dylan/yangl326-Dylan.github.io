@@ -1,0 +1,4 @@
+1:"$Sreact.fragment"
+2:I[23245,["/learn_opencode/_next/static/chunks/1f3a3d1d5f587aad.js","/learn_opencode/_next/static/chunks/d3bfaed6d0a5fa18.js"],"default"]
+3:I[5157,["/learn_opencode/_next/static/chunks/1f3a3d1d5f587aad.js","/learn_opencode/_next/static/chunks/d3bfaed6d0a5fa18.js"],"default"]
+0:{"buildId":"k78pvUUIGwrC09fSoQjPh","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
