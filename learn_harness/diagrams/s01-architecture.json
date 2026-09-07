@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Cordis Plugin Foundation 插件基础架构",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "components": [
+    { "id": "ctx", "type": "backend", "label": "Cordis Context", "sublabel": "Central Registry", "pos": [300, 250], "size": [200, 60] },
+    { "id": "bundle-a", "type": "frontend", "label": "Bundle A", "sublabel": "Plugin Layer", "pos": [50, 100], "size": [150, 60] },
+    { "id": "bundle-b", "type": "frontend", "label": "Bundle B", "sublabel": "Plugin Layer", "pos": [300, 100], "size": [150, 60] },
+    { "id": "bundle-c", "type": "frontend", "label": "Bundle C", "sublabel": "Plugin Layer", "pos": [550, 100], "size": [150, 60] },
+    { "id": "registry", "type": "database", "label": "Service Registry", "sublabel": "ctx.services", "pos": [100, 400], "size": [150, 60] },
+    { "id": "event-bus", "type": "messagebus", "label": "Event Bus", "sublabel": "ctx.on()", "pos": [300, 400], "size": [150, 60] },
+    { "id": "effect-stack", "type": "backend", "label": "Effect Stack", "sublabel": "ctx.effect()", "pos": [500, 400], "size": [150, 60] }
+  ],
+  "connections": [
+    { "from": "bundle-a", "to": "ctx", "label": "register", "fromSide": "bottom", "toSide": "top", "labelAt": [175, 175] },
+    { "from": "bundle-b", "to": "ctx", "label": "register", "fromSide": "bottom", "toSide": "top", "labelAt": [375, 175] },
+    { "from": "bundle-c", "to": "ctx", "label": "register", "fromSide": "bottom", "toSide": "top", "labelAt": [575, 175] },
+    { "from": "ctx", "to": "registry", "label": "services", "fromSide": "bottom", "toSide": "top", "labelAt": [200, 325] },
+    { "from": "ctx", "to": "event-bus", "label": "events", "fromSide": "bottom", "toSide": "top", "labelAt": [375, 325] },
+    { "from": "ctx", "to": "effect-stack", "label": "effects", "fromSide": "bottom", "toSide": "top", "labelAt": [550, 325] }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Cordis 架构", "items": ["一切皆插件，无特权核心", "ctx 是中央注册表", "Effect 模式确保可逆清理"] }
+  ]
+}

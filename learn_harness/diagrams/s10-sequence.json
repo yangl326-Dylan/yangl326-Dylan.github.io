@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Lifecycle Events 生命周期事件",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [900, 500]
+  },
+  "participants": [
+    { "id": "orch", "label": "Orchestrator", "type": "backend" },
+    { "id": "scope", "label": "Scope", "type": "backend" },
+    { "id": "event", "label": "Event System", "type": "messagebus" },
+    { "id": "hook", "label": "Hook", "type": "backend" },
+    { "id": "plugin", "label": "Plugin", "type": "frontend" }
+  ],
+  "messages": [
+    { "from": "orch", "to": "scope", "label": "registerPlugin()", "y": 160 },
+    { "from": "scope", "to": "event", "label": "hook(event, handler)", "y": 210 },
+    { "from": "event", "to": "hook", "label": "emit(event, context)", "y": 260 },
+    { "from": "hook", "to": "plugin", "label": "handler.call()", "y": 310 },
+    { "from": "plugin", "to": "hook", "label": "next() — waterfall chain", "y": 360 }
+  ],
+  "cards": [
+    { "dot": "rose", "title": "生命周期", "items": ["注册 → 挂载 → 就绪", "Wardown 卸载", "Waterfall 级联"] }
+  ]
+}

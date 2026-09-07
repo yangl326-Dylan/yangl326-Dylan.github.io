@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Context Management 上下文管理",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Context Flow" }
+  ],
+  "nodes": [
+    { "id": "sections", "lane": "main", "col": 0, "type": "frontend", "label": "Sections" },
+    { "id": "schemas", "lane": "main", "col": 1, "type": "backend", "label": "Tool Schemas" },
+    { "id": "assembler", "lane": "main", "col": 2, "type": "backend", "label": "Assembler" },
+    { "id": "context-window", "lane": "main", "col": 3, "type": "database", "label": "Context Window" },
+    { "id": "compaction", "lane": "main", "col": 4, "type": "backend", "label": "Compaction" },
+    { "id": "model", "lane": "main", "col": 5, "type": "cloud", "label": "Model" }
+  ],
+  "edges": [
+    { "from": "sections", "to": "assembler", "label": "ordered" },
+    { "from": "schemas", "to": "assembler", "label": "inject" },
+    { "from": "assembler", "to": "context-window", "label": "system prompt" },
+    { "from": "context-window", "to": "compaction", "label": "if overflow", "variant": "dashed" },
+    { "from": "compaction", "to": "context-window", "label": "compressed", "variant": "dashed" },
+    { "from": "context-window", "to": "model", "label": "request" }
+  ],
+  "cards": [
+    { "dot": "amber", "title": "上下文管理", "items": ["有序 prompt 组装", "动态变量注入", "智能压缩策略"] }
+  ]
+}

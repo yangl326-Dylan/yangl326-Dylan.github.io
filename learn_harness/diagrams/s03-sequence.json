@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Agent Loop Sequence 循环时序",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1000, 600]
+  },
+  "participants": [
+    { "id": "user", "type": "frontend", "label": "User" },
+    { "id": "loop", "type": "backend", "label": "Agent Loop" },
+    { "id": "model", "type": "cloud", "label": "Model" },
+    { "id": "tools", "type": "backend", "label": "Tool Registry" },
+    { "id": "session", "type": "database", "label": "Session Log" }
+  ],
+  "messages": [
+    { "from": "user", "to": "loop", "label": "send prompt", "y": 160 },
+    { "from": "loop", "to": "session", "label": "append user message", "y": 200 },
+    { "from": "loop", "to": "model", "label": "assemble request", "y": 240 },
+    { "from": "model", "to": "loop", "label": "stream response", "y": 280 },
+    { "from": "loop", "to": "tools", "label": "dispatch tool calls (parallel)", "y": 320 },
+    { "from": "tools", "to": "loop", "label": "return results", "y": 360 },
+    { "from": "loop", "to": "session", "label": "append tool results", "y": 400 },
+    { "from": "loop", "to": "model", "label": "next step", "y": 440, "variant": "dashed" },
+    { "from": "loop", "to": "user", "label": "final response", "y": 480 }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "Agent 循环", "items": ["Turn/Step 生命周期", "并行工具执行", "会话日志追加"] }
+  ]
+}
