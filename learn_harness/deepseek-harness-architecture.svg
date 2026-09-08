@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" fill="none">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1100" height="700" rx="12" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="550" y="35" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="bold" font-family="system-ui">DeepSeek Harness System Architecture</text>
+
+  <!-- ============================================ -->
+  <!-- LAYER 5: Platform (top) -->
+  <!-- ============================================ -->
+  <rect x="30" y="55" width="1040" height="90" rx="8" fill="#ef4444" opacity="0.08" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="78" fill="#fca5a5" font-size="10" font-weight="bold" font-family="system-ui">LAYER 5: Platform</text>
+
+  <!-- s10: Config & Session -->
+  <rect x="50" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="127" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s10 · Config &amp; Session</text>
+  <text x="127" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">cordis.yml · profiles</text>
+
+  <!-- s11: Plugin System -->
+  <rect x="225" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="302" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s11 · Plugin System</text>
+  <text x="302" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">@deepseek-ai/dsh-*</text>
+
+  <!-- s12: Bundle System -->
+  <rect x="400" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="477" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s12 · Bundle System</text>
+  <text x="477" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">dsh-base · dsh-web-app</text>
+
+  <!-- s13: Credentials & Settings -->
+  <rect x="575" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="652" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s13 · Credentials</text>
+  <text x="652" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">env-over-.env provider</text>
+
+  <!-- s14: Workspace -->
+  <rect x="750" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="827" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s14 · Workspace</text>
+  <text x="827" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Entity management</text>
+
+  <!-- ============================================ -->
+  <!-- LAYER 4: Core Loop -->
+  <!-- ============================================ -->
+  <rect x="30" y="155" width="1040" height="90" rx="8" fill="#3B82F6" opacity="0.08" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="178" fill="#93c5fd" font-size="10" font-weight="bold" font-family="system-ui">LAYER 4: Core Loop</text>
+
+  <!-- s03: Agent Loop -->
+  <rect x="50" y="190" width="200" height="42" rx="6" fill="#1e3a5f" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="150" y="208" text-anchor="middle" fill="#93c5fd" font-size="10" font-family="system-ui" font-weight="bold">s03 · Agent Loop</text>
+  <text x="150" y="222" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Turn/Step lifecycle · Cancellation</text>
+
+  <!-- s04: Model Adapter -->
+  <rect x="270" y="190" width="200" height="42" rx="6" fill="#1e3a5f" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="370" y="208" text-anchor="middle" fill="#93c5fd" font-size="10" font-family="system-ui" font-weight="bold">s04 · Model Adapter</text>
+  <text x="370" y="222" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">DeepSeek · OpenAI · Retry</text>
+
+  <!-- s05: Context Management -->
+  <rect x="490" y="190" width="200" height="42" rx="6" fill="#1e3a5f" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="590" y="208" text-anchor="middle" fill="#93c5fd" font-size="10" font-family="system-ui" font-weight="bold">s05 · Context Mgmt</text>
+  <text x="590" y="222" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Prompt assembly · Compaction</text>
+
+  <!-- s06: Event System -->
+  <rect x="710" y="190" width="200" height="42" rx="6" fill="#1e3a5f" stroke="#3B82F6" stroke-width="1.2"/>
+  <text x="810" y="208" text-anchor="middle" fill="#93c5fd" font-size="10" font-family="system-ui" font-weight="bold">s06 · Event System</text>
+  <text x="810" y="222" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Waterfall hooks · Taxonomy</text>
+
+  <!-- ============================================ -->
+  <!-- LAYER 3: Capabilities -->
+  <!-- ============================================ -->
+  <rect x="30" y="255" width="1040" height="130" rx="8" fill="#10B981" opacity="0.08" stroke="#10B981" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="278" fill="#6ee7b7" font-size="10" font-weight="bold" font-family="system-ui">LAYER 3: Capabilities</text>
+
+  <!-- Row 1: Core capabilities -->
+  <rect x="50" y="290" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="110" y="311" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Shell</text>
+
+  <rect x="185" y="290" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="245" y="311" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Filesystem</text>
+
+  <rect x="320" y="290" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="380" y="311" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Sandbox</text>
+
+  <rect x="455" y="290" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="515" y="311" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Subagent</text>
+
+  <rect x="590" y="290" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="650" y="311" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Web</text>
+
+  <rect x="725" y="290" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="785" y="311" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">LSP</text>
+
+  <rect x="860" y="290" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="920" y="311" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Skill</text>
+
+  <!-- Row 2: Additional capabilities -->
+  <rect x="50" y="335" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="110" y="356" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">LLM</text>
+
+  <rect x="185" y="335" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="245" y="356" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Session</text>
+
+  <rect x="320" y="335" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="380" y="356" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Compaction</text>
+
+  <rect x="455" y="335" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="515" y="356" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Workflow</text>
+
+  <rect x="590" y="335" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="650" y="356" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Jobs</text>
+
+  <rect x="725" y="335" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="785" y="356" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Todo</text>
+
+  <rect x="860" y="335" width="120" height="35" rx="5" fill="#1e3a5f" stroke="#10B981" stroke-width="1"/>
+  <text x="920" y="356" text-anchor="middle" fill="#6ee7b7" font-size="9" font-family="system-ui" font-weight="bold">Plan</text>
+
+  <!-- ============================================ -->
+  <!-- LAYER 2: Infrastructure -->
+  <!-- ============================================ -->
+  <rect x="30" y="395" width="1040" height="90" rx="8" fill="#8B5CF6" opacity="0.08" stroke="#8B5CF6" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="418" fill="#c4b5fd" font-size="10" font-weight="bold" font-family="system-ui">LAYER 2: Infrastructure</text>
+
+  <!-- Storage -->
+  <rect x="50" y="430" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="127" y="448" text-anchor="middle" fill="#c4b5fd" font-size="10" font-family="system-ui" font-weight="bold">Storage</text>
+  <text x="127" y="462" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Content-addressed · Spill</text>
+
+  <!-- Session Persistence -->
+  <rect x="225" y="430" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="302" y="448" text-anchor="middle" fill="#c4b5fd" font-size="10" font-family="system-ui" font-weight="bold">Session Persistence</text>
+  <text x="302" y="462" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Append-only log</text>
+
+  <!-- Settings -->
+  <rect x="400" y="430" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="477" y="448" text-anchor="middle" fill="#c4b5fd" font-size="10" font-family="system-ui" font-weight="bold">Settings</text>
+  <text x="477" y="462" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">User preferences</text>
+
+  <!-- Credentials -->
+  <rect x="575" y="430" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="652" y="448" text-anchor="middle" fill="#c4b5fd" font-size="10" font-family="system-ui" font-weight="bold">Credentials</text>
+  <text x="652" y="462" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Auth flows</text>
+
+  <!-- Identity -->
+  <rect x="750" y="430" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#8B5CF6" stroke-width="1.2"/>
+  <text x="827" y="448" text-anchor="middle" fill="#c4b5fd" font-size="10" font-family="system-ui" font-weight="bold">Identity</text>
+  <text x="827" y="462" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Anonymous identity</text>
+
+  <!-- ============================================ -->
+  <!-- LAYER 1: Foundation (bottom) -->
+  <!-- ============================================ -->
+  <rect x="30" y="495" width="1040" height="90" rx="8" fill="#F59E0B" opacity="0.08" stroke="#F59E0B" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="518" fill="#fcd34d" font-size="10" font-weight="bold" font-family="system-ui">LAYER 1: Cordis Foundation</text>
+
+  <!-- Scope -->
+  <rect x="50" y="530" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="127" y="548" text-anchor="middle" fill="#fcd34d" font-size="10" font-family="system-ui" font-weight="bold">Scope</text>
+  <text x="127" y="562" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Isolation boundary</text>
+
+  <!-- Event Bus -->
+  <rect x="225" y="530" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="302" y="548" text-anchor="middle" fill="#fcd34d" font-size="10" font-family="system-ui" font-weight="bold">Event Bus</text>
+  <text x="302" y="562" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Waterfall hooks</text>
+
+  <!-- Effect Stack -->
+  <rect x="400" y="530" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="477" y="548" text-anchor="middle" fill="#fcd34d" font-size="10" font-family="system-ui" font-weight="bold">Effect Stack</text>
+  <text x="477" y="562" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Lifecycle mgmt</text>
+
+  <!-- Registry -->
+  <rect x="575" y="530" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="652" y="548" text-anchor="middle" fill="#fcd34d" font-size="10" font-family="system-ui" font-weight="bold">Registry</text>
+  <text x="652" y="562" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Service discovery</text>
+
+  <!-- Plugin Loader -->
+  <rect x="750" y="530" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#F59E0B" stroke-width="1.2"/>
+  <text x="827" y="548" text-anchor="middle" fill="#fcd34d" font-size="10" font-family="system-ui" font-weight="bold">Plugin Loader</text>
+  <text x="827" y="562" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Mount/unmount</text>
+
+  <!-- ============================================ -->
+  <!-- User Interaction Layer -->
+  <!-- ============================================ -->
+  <rect x="30" y="600" width="1040" height="80" rx="8" fill="#ec4899" opacity="0.08" stroke="#ec4899" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="623" fill="#f9a8d4" font-size="10" font-weight="bold" font-family="system-ui">USER INTERACTION</text>
+
+  <!-- Web GUI -->
+  <rect x="50" y="635" width="155" height="35" rx="5" fill="#1e3a5f" stroke="#ec4899" stroke-width="1"/>
+  <text x="127" y="656" text-anchor="middle" fill="#f9a8d4" font-size="9" font-family="system-ui" font-weight="bold">Web GUI</text>
+
+  <!-- CLI -->
+  <rect x="225" y="635" width="155" height="35" rx="5" fill="#1e3a5f" stroke="#ec4899" stroke-width="1"/>
+  <text x="302" y="656" text-anchor="middle" fill="#f9a8d4" font-size="9" font-family="system-ui" font-weight="bold">CLI</text>
+
+  <!-- SDK -->
+  <rect x="400" y="635" width="155" height="35" rx="5" fill="#1e3a5f" stroke="#ec4899" stroke-width="1"/>
+  <text x="477" y="656" text-anchor="middle" fill="#f9a8d4" font-size="9" font-family="system-ui" font-weight="bold">SDK</text>
+
+  <!-- ACP Server -->
+  <rect x="575" y="635" width="155" height="35" rx="5" fill="#1e3a5f" stroke="#ec4899" stroke-width="1"/>
+  <text x="652" y="656" text-anchor="middle" fill="#f9a8d4" font-size="9" font-family="system-ui" font-weight="bold">ACP Server</text>
+
+  <!-- ============================================ -->
+  <!-- Arrows showing data flow -->
+  <!-- ============================================ -->
+  
+  <!-- User to Platform -->
+  <line x1="127" y1="635" x2="127" y2="585" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,2"/>
+  
+  <!-- Platform to Core -->
+  <line x1="150" y1="190" x2="150" y2="145" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,2"/>
+  
+  <!-- Core to Capabilities -->
+  <line x1="370" y1="232" x2="370" y2="250" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,2"/>
+  
+  <!-- Capabilities to Infrastructure -->
+  <line x1="515" y1="370" x2="515" y2="390" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,2"/>
+  
+  <!-- Infrastructure to Foundation -->
+  <line x1="652" y1="472" x2="652" y2="490" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)" stroke-dasharray="4,2"/>
+
+  <!-- ============================================ -->
+  <!-- Legend -->
+  <!-- ============================================ -->
+  <rect x="30" y="690" width="1040" height="1" fill="#334155"/>
+</svg>
