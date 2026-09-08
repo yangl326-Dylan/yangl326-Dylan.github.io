@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Event System Sequence 事件系统时序",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1000, 600]
+  },
+  "participants": [
+    { "id": "source", "type": "frontend", "label": "Event Source" },
+    { "id": "bus", "type": "messagebus", "label": "Event Bus" },
+    { "id": "handler-a", "type": "backend", "label": "Handler A" },
+    { "id": "handler-b", "type": "backend", "label": "Handler B" },
+    { "id": "handler-c", "type": "backend", "label": "Handler C" }
+  ],
+  "messages": [
+    { "from": "source", "to": "bus", "label": "emit(event)", "y": 160 },
+    { "from": "bus", "to": "handler-a", "label": "dispatch", "y": 200 },
+    { "from": "bus", "to": "handler-b", "label": "dispatch", "y": 240 },
+    { "from": "bus", "to": "handler-c", "label": "dispatch", "y": 280 },
+    { "from": "handler-a", "to": "bus", "label": "complete", "y": 320 },
+    { "from": "handler-b", "to": "bus", "label": "complete", "y": 360 },
+    { "from": "handler-c", "to": "bus", "label": "complete", "y": 400 }
+  ],
+  "cards": [
+    { "dot": "rose", "title": "事件系统", "items": ["发布-订阅模式", "异步并行处理", "优先级排序"] }
+  ]
+}

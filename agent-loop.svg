@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" fill="none">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F59E0B"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1100" height="700" rx="12" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="550" y="35" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="bold" font-family="system-ui">OpenCode System Architecture</text>
+
+  <!-- ============================================ -->
+  <!-- LAYER 5: Platform (top) -->
+  <!-- ============================================ -->
+  <rect x="30" y="55" width="1040" height="90" rx="8" fill="#ef4444" opacity="0.08" stroke="#ef4444" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="78" fill="#fca5a5" font-size="10" font-weight="bold" font-family="system-ui">LAYER 5: Platform</text>
+
+  <!-- s10: Config & Session -->
+  <rect x="50" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="127" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s10 · Config &amp; Session</text>
+  <text x="127" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">opencode.jsonc · deepMerge</text>
+
+  <!-- s11: MCP Tools -->
+  <rect x="225" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="302" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s11 · MCP Tools</text>
+  <text x="302" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">External tool protocol bridge</text>
+
+  <!-- s12: Plugin System -->
+  <rect x="400" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="477" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s12 · Plugin System</text>
+  <text x="477" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">@opencode-ai/plugin</text>
+
+  <!-- s13: Auth & Provider -->
+  <rect x="575" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="652" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s13 · Auth &amp; Providers</text>
+  <text x="652" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Azure · OpenAI · GitHub</text>
+
+  <!-- s14: Event Bus -->
+  <rect x="750" y="90" width="155" height="42" rx="6" fill="#1e3a5f" stroke="#ef4444" stroke-width="1.2"/>
+  <text x="827" y="108" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="system-ui" font-weight="bold">s14 · Event Bus</text>
+  <text x="827" y="122" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Pub/sub service bridge</text>
+
+  <!-- Layer 5 → Layer 4 connector -->
+  <path d="M 550 145 L 550 160" stroke="#ef4444" stroke-width="1.5" opacity="0.5" marker-end="url(#arrow)"/>
+
+
+  <!-- ============================================ -->
+  <!-- LAYER 4: Extensibility -->
+  <!-- ============================================ -->
+  <rect x="30" y="165" width="1040" height="90" rx="8" fill="#8b5cf6" opacity="0.08" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="188" fill="#c4b5fd" font-size="10" font-weight="bold" font-family="system-ui">LAYER 4: Extensibility</text>
+
+  <!-- s07: Skill Loading -->
+  <rect x="50" y="200" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text x="140" y="218" text-anchor="middle" fill="#c4b5fd" font-size="10" font-family="system-ui" font-weight="bold">s07 · Skill Loading</text>
+  <text x="140" y="232" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">SKILL.md · priority chain</text>
+
+  <!-- s08: Hook System -->
+  <rect x="260" y="200" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text x="350" y="218" text-anchor="middle" fill="#c4b5fd" font-size="10" font-family="system-ui" font-weight="bold">s08 · Hook System</text>
+  <text x="350" y="232" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Lifecycle callbacks</text>
+
+  <!-- s09: Plugin Runtime -->
+  <rect x="470" y="200" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text x="560" y="218" text-anchor="middle" fill="#c4b5fd" font-size="10" font-family="system-ui" font-weight="bold">s09 · Plugin Runtime</text>
+  <text x="560" y="232" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Loader · registry · hooks</text>
+
+  <!-- Layer 4 → Layer 3 connector -->
+  <path d="M 550 255 L 550 270" stroke="#8b5cf6" stroke-width="1.5" opacity="0.5" marker-end="url(#arrow)"/>
+
+
+  <!-- ============================================ -->
+  <!-- LAYER 3: Planning & Control -->
+  <!-- ============================================ -->
+  <rect x="30" y="275" width="1040" height="90" rx="8" fill="#10b981" opacity="0.08" stroke="#10b981" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="298" fill="#6ee7b7" font-size="10" font-weight="bold" font-family="system-ui">LAYER 3: Planning &amp; Control</text>
+
+  <!-- s05: Task Categories -->
+  <rect x="50" y="310" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#10b981" stroke-width="1.2"/>
+  <text x="140" y="328" text-anchor="middle" fill="#6ee7b7" font-size="10" font-family="system-ui" font-weight="bold">s05 · Task Categories</text>
+  <text x="140" y="342" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">quick · deep · visual · artistry</text>
+
+  <!-- s06: Subagent Dispatch -->
+  <rect x="260" y="310" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#10b981" stroke-width="1.2"/>
+  <text x="350" y="328" text-anchor="middle" fill="#6ee7b7" font-size="10" font-family="system-ui" font-weight="bold">s06 · Subagent Dispatch</text>
+  <text x="350" y="342" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">oracle · explore · librarian</text>
+
+  <!-- s15: Context Compaction -->
+  <rect x="470" y="310" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#10b981" stroke-width="1.2"/>
+  <text x="560" y="328" text-anchor="middle" fill="#6ee7b7" font-size="10" font-family="system-ui" font-weight="bold">s15 · Context Compaction</text>
+  <text x="560" y="342" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Summarization · overflow</text>
+
+  <!-- s16: Retry & Recovery -->
+  <rect x="680" y="310" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#10b981" stroke-width="1.2"/>
+  <text x="770" y="328" text-anchor="middle" fill="#6ee7b7" font-size="10" font-family="system-ui" font-weight="bold">s16 · Retry &amp; Recovery</text>
+  <text x="770" y="342" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">DOOM_LOOP_THRESHOLD</text>
+
+  <!-- Layer 3 → Layer 2 connector -->
+  <path d="M 550 365 L 550 380" stroke="#10b981" stroke-width="1.5" opacity="0.5" marker-end="url(#arrow)"/>
+
+
+  <!-- ============================================ -->
+  <!-- LAYER 2: Concurrency -->
+  <!-- ============================================ -->
+  <rect x="30" y="385" width="1040" height="90" rx="8" fill="#f59e0b" opacity="0.08" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="50" y="408" fill="#fbbf24" font-size="10" font-weight="bold" font-family="system-ui">LAYER 2: Concurrency</text>
+
+  <!-- Background Tasks -->
+  <rect x="50" y="420" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="140" y="438" text-anchor="middle" fill="#fbbf24" font-size="10" font-family="system-ui" font-weight="bold">Background Tasks</text>
+  <text x="140" y="452" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Event bus · non-blocking</text>
+
+  <!-- Agent Teams -->
+  <rect x="260" y="420" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="350" y="438" text-anchor="middle" fill="#fbbf24" font-size="10" font-family="system-ui" font-weight="bold">Agent Teams</text>
+  <text x="350" y="452" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Mailboxes · protocols</text>
+
+  <!-- Worktree Isolation -->
+  <rect x="470" y="420" width="180" height="42" rx="6" fill="#1e3a5f" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="560" y="438" text-anchor="middle" fill="#fbbf24" font-size="10" font-family="system-ui" font-weight="bold">Worktree Isolation</text>
+  <text x="560" y="452" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="system-ui">Separate FS per agent</text>
+
+  <!-- Layer 2 → Layer 1 connector -->
+  <path d="M 550 475 L 550 490" stroke="#f59e0b" stroke-width="1.5" opacity="0.5" marker-end="url(#arrow)"/>
+
+
+  <!-- ============================================ -->
+  <!-- LAYER 1: Core Loop (Bottom - Foundation) -->
+  <!-- ============================================ -->
+  <rect x="150" y="495" width="800" height="85" rx="8" fill="#3b82f6" opacity="0.12" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="170" y="518" fill="#93c5fd" font-size="10" font-weight="bold" font-family="system-ui">LAYER 1: Core Loop (Foundation)</text>
+
+  <!-- s01: Agent Loop -->
+  <rect x="170" y="530" width="145" height="38" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="242" y="548" text-anchor="middle" fill="#93c5fd" font-size="10" font-family="system-ui" font-weight="bold">s01 · Agent Loop</text>
+  <text x="242" y="561" text-anchor="middle" fill="#64748b" font-size="7" font-family="system-ui">while( tool_use )</text>
+
+  <!-- s02: Tool Dispatch -->
+  <rect x="335" y="530" width="145" height="38" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="407" y="548" text-anchor="middle" fill="#93c5fd" font-size="10" font-family="system-ui" font-weight="bold">s02 · Tool Dispatch</text>
+  <text x="407" y="561" text-anchor="middle" fill="#64748b" font-size="7" font-family="system-ui">TOOL_MAP[name]</text>
+
+  <!-- s03: Permission Gate -->
+  <rect x="500" y="530" width="145" height="38" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="572" y="548" text-anchor="middle" fill="#93c5fd" font-size="10" font-family="system-ui" font-weight="bold">s03 · Permission Gate</text>
+  <text x="572" y="561" text-anchor="middle" fill="#64748b" font-size="7" font-family="system-ui">allow · deny · ask</text>
+
+  <!-- s04: TodoWrite -->
+  <rect x="665" y="530" width="145" height="38" rx="6" fill="#1e40af" stroke="#3b82f6" stroke-width="1.2"/>
+  <text x="737" y="548" text-anchor="middle" fill="#93c5fd" font-size="10" font-family="system-ui" font-weight="bold">s04 · TodoWrite</text>
+  <text x="737" y="561" text-anchor="middle" fill="#64748b" font-size="7" font-family="system-ui">Task planning · tracking</text>
+
+  <!-- Cross-layer data flow arrows -->
+  <path d="M 242 530 L 242 495 L 350 495 L 350 530" stroke="#3b82f6" stroke-width="0.8" opacity="0.3" fill="none" stroke-dasharray="3,2"/>
+  <path d="M 572 530 L 572 495 L 500 495 L 500 530" stroke="#3b82f6" stroke-width="0.8" opacity="0.3" fill="none" stroke-dasharray="3,2"/>
+
+  <!-- ============================================ -->
+  <!-- VS Code / Claude Code Comparison Section -->
+  <!-- ============================================ -->
+  <rect x="150" y="595" width="800" height="42" rx="6" fill="#0f172a" stroke="#64748b" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="170" y="615" fill="#94a3b8" font-size="9" font-family="system-ui" font-weight="bold">
+    <tspan fill="#64748b">Comparisons: </tspan>
+    <tspan fill="#3b82f6">Claude Code</tspan>
+    <tspan fill="#64748b"> · </tspan>
+    <tspan fill="#10b981">Cursor</tspan>
+    <tspan fill="#64748b"> · </tspan>
+    <tspan fill="#f59e0b">GitHub Copilot</tspan>
+    <tspan fill="#64748b"> — All share the same loop architecture with different policy layers</tspan>
+  </text>
+  <text x="170" y="629" fill="#64748b" font-size="8" font-family="system-ui">Key differentiators: Permission model · Plugin SDK · Skill system · Event bus · Agent teams</text>
+
+  <!-- Layer labels on the left -->
+  <text x="15" y="135" fill="#ef4444" font-size="7" font-family="system-ui" transform="rotate(-90, 12, 100)">Platform</text>
+  <text x="15" y="245" fill="#8b5cf6" font-size="7" font-family="system-ui" transform="rotate(-90, 12, 210)">Extensibility</text>
+  <text x="15" y="355" fill="#10b981" font-size="7" font-family="system-ui" transform="rotate(-90, 12, 320)">Planning</text>
+  <text x="15" y="465" fill="#f59e0b" font-size="7" font-family="system-ui" transform="rotate(-90, 12, 430)">Concurrency</text>
+  <text x="15" y="570" fill="#3b82f6" font-size="7" font-family="system-ui" transform="rotate(-90, 12, 540)">Core</text>
+
+  <!-- Legend -->
+  <rect x="900" y="600" width="155" height="80" rx="4" fill="#0f172a" stroke="#334155" stroke-width="0.5"/>
+  <text x="910" y="615" fill="#94a3b8" font-size="8" font-family="system-ui" font-weight="bold">Sessions Legend</text>
+  <rect x="910" y="622" width="8" height="8" rx="2" fill="#3b82f6"/>
+  <text x="924" y="630" fill="#64748b" font-size="7" font-family="system-ui">s01-s04: Core</text>
+  <rect x="910" y="636" width="8" height="8" rx="2" fill="#10b981"/>
+  <text x="924" y="644" fill="#64748b" font-size="7" font-family="system-ui">s05-s07: Planning</text>
+  <rect x="910" y="650" width="8" height="8" rx="2" fill="#8b5cf6"/>
+  <text x="924" y="658" fill="#64748b" font-size="7" font-family="system-ui">s08-s09: Extensibility</text>
+  <rect x="910" y="664" width="8" height="8" rx="2" fill="#ef4444"/>
+  <text x="924" y="672" fill="#64748b" font-size="7" font-family="system-ui">s10-s14: Platform</text>
+</svg>

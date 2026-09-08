@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Storage Layer 存储层",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Storage Flow" }
+  ],
+  "nodes": [
+    { "id": "seam", "lane": "main", "col": 0, "type": "backend", "label": "Storage Seam" },
+    { "id": "content-store", "lane": "main", "col": 1, "type": "database", "label": "Content Store" },
+    { "id": "local", "lane": "main", "col": 2, "type": "database", "label": "Local Backend" },
+    { "id": "disk", "lane": "main", "col": 3, "type": "external", "label": "Disk" }
+  ],
+  "edges": [
+    { "from": "seam", "to": "content-store", "label": "store" },
+    { "from": "content-store", "to": "local", "label": "persist" },
+    { "from": "local", "to": "disk", "label": "write" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "存储层", "items": ["存储 seam 抽象", "内容寻址去重", "本地后端持久化"] }
+  ]
+}

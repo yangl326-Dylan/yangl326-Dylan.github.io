@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Plugin Communication Architecture 插件通信架构",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "components": [
+    { "id": "plugin-a", "type": "frontend", "label": "Plugin A", "sublabel": "Scope", "pos": [50, 250], "size": [150, 60] },
+    { "id": "plugin-b", "type": "frontend", "label": "Plugin B", "sublabel": "Scope", "pos": [600, 250], "size": [150, 60] },
+    { "id": "def", "type": "backend", "label": "Service Definition", "sublabel": "Contract", "pos": [250, 150], "size": [150, 60] },
+    { "id": "provider", "type": "backend", "label": "Service Provider", "sublabel": "Implementation", "pos": [450, 150], "size": [150, 60] },
+    { "id": "channels", "type": "messagebus", "label": "Event Channels", "sublabel": "Communication", "pos": [300, 400], "size": [200, 60] }
+  ],
+  "connections": [
+    { "from": "plugin-a", "to": "def", "label": "define", "fromSide": "right", "toSide": "left", "labelAt": [150, 180] },
+    { "from": "def", "to": "provider", "label": "implement", "fromSide": "right", "toSide": "left", "labelAt": [350, 140] },
+    { "from": "provider", "to": "plugin-b", "label": "provide", "fromSide": "bottom", "toSide": "top", "labelAt": [550, 224] },
+    { "from": "plugin-a", "to": "channels", "label": "emit", "fromSide": "bottom", "toSide": "top", "labelAt": [200, 320] },
+    { "from": "channels", "to": "plugin-b", "label": "receive", "fromSide": "top", "toSide": "bottom", "labelAt": [500, 320] }
+  ],
+  "cards": [
+    { "dot": "violet", "title": "插件通信", "items": ["Service Definition/Provider 模式", "作用域隔离", "事件通道通信"] }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Session Lifecycle 会话生命周期",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1200, 400]
+  },
+  "lanes": [
+    { "id": "main", "label": "Session Lifecycle" }
+  ],
+  "nodes": [
+    { "id": "create", "lane": "main", "col": 0, "type": "frontend", "label": "Create" },
+    { "id": "active", "lane": "main", "col": 1, "type": "backend", "label": "Active" },
+    { "id": "pause", "lane": "main", "col": 2, "type": "backend", "label": "Pause" },
+    { "id": "close", "lane": "main", "col": 3, "type": "external", "label": "Close" }
+  ],
+  "edges": [
+    { "from": "create", "to": "active", "label": "start" },
+    { "from": "active", "to": "pause", "label": "suspend" },
+    { "from": "pause", "to": "close", "label": "end" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "会话管理", "items": ["创建-激活-暂停-关闭", "状态持久化"] }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Session Management Architecture 会话管理架构",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [800, 600]
+  },
+  "components": [
+    { "id": "event-log", "type": "database", "label": "Session Event Log", "sublabel": "Append-only", "pos": [300, 100], "size": [200, 60] },
+    { "id": "deriver", "type": "backend", "label": "History Deriver", "sublabel": "From Events", "pos": [300, 250], "size": [200, 60] },
+    { "id": "projection", "type": "backend", "label": "Projection Seam", "sublabel": "Views", "pos": [100, 400], "size": [150, 60] },
+    { "id": "lineage", "type": "backend", "label": "Lineage Tracker", "sublabel": "Ancestry", "pos": [300, 400], "size": [150, 60] },
+    { "id": "backend", "type": "database", "label": "Persistence Backend", "sublabel": "Storage", "pos": [500, 400], "size": [150, 60] }
+  ],
+  "connections": [
+    { "from": "event-log", "to": "deriver", "label": "events", "fromSide": "bottom", "toSide": "top", "labelAt": [350, 175] },
+    { "from": "deriver", "to": "projection", "label": "history", "fromSide": "bottom", "toSide": "top", "labelAt": [150, 325] },
+    { "from": "deriver", "to": "lineage", "label": "ancestry", "fromSide": "bottom", "toSide": "top", "labelAt": [450, 325] },
+    { "from": "event-log", "to": "backend", "label": "persist", "fromSide": "bottom", "toSide": "top", "labelAt": [550, 175] }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "会话管理", "items": ["追加写入事件日志", "从事件派生历史", "投影和血缘追踪"] }
+  ]
+}
